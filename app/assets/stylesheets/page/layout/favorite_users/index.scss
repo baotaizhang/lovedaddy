@@ -1,0 +1,89 @@
+body#favorite_users-index {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+  @import 'page/define/common_colors';
+
+  h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: $male_color;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  /*--btn-----------*/
+  .usr-btn-area {
+    margin-bottom: 20px;
+    padding: 0 0 20px;
+    border-bottom: solid 1px #e0e0e0;
+  }
+  .usr-btn-area ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .usr-btn-area ul li {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .usr-btn-area ul li:last-child {
+    margin-right: 0;
+  }
+  .usr-btn-area ul li a:hover {
+    color: #fff;
+  }
+  .usr-history-btn {
+    background: #c57a44;
+  }
+  .usr-btn {
+    background: #c5444b;
+  }
+  .usr-history-btn, .usr-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 9px;
+    color: #fff;
+    text-align: center;
+  }
+  .usr-btn-area ul li a {
+    border-radius: 2px;
+  }
+  .boards-area {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #e0e0e0;
+  }
+  .boards-area:last-child {
+    margin-bottom: 0;
+  }
+  /*--content-----------*/
+  p {
+    margin-bottom: 0;
+  }
+  .favorite-remove a {
+    display: inline-block;
+    margin-top: 17px;
+    padding: 5px 9px;
+    font-size: 11px;
+    border: solid 1px #c8141e;
+    color: #c8141e;
+  }
+  .favorite-age {
+    padding-top: 1px;
+    font-size: 14px;
+  }
+  .favorite-name {
+    margin-right: 15px;
+    float: left;
+  }
+  .favorite-status {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #a9a9a9;
+    clear: left;
+  }
+
+  @import 'page/layout/favorite_users/index_responsive';
+}
+

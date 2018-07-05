@@ -1,0 +1,10 @@
+meta charset="utf-8"
+meta name="viewport" content="width=device-width"
+
+= stylesheet_link_tag 'application', media: 'all'
+= javascript_include_tag 'application'
+== yield(:page_stylesheet) if content_for?(:page_stylesheet)
+
+= csrf_meta_tags
+= csp_meta_tag
+

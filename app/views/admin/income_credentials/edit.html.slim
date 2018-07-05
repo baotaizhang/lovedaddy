@@ -1,0 +1,18 @@
+= form_for @income_credential, url: admin_income_credential_path, method: :patch do |f|
+  h1 ユーザー情報
+  li ニックネーム: #{@user.nickname}
+  li メールアドレス: #{@user.email}
+  li 年齢: #{@user.age}歳
+  li 生年月日: #{@user.birthday}
+  - if @user.sex.male?
+    li 年収: #{@user.range_text(:income)}
+    li 資産: #{@user.range_text(:property)}
+  - if @income_credential.photo_1.present?
+    = image_tag @income_credential.photo_1.url, width: 300, height: 300
+  - if @income_credential.photo_2.present?
+    = image_tag @income_credential.photo_2.url, width: 300, height: 300
+  - if @income_credential.photo_3.present?
+    = image_tag @income_credential.photo_3.url, width: 300, height: 300
+  h1 所得証明を承認しますか？
+  p = button_to 'はい', admin_income_credential_path(@income_credential), method: :put, params: { approved: 'true' }
+  p = button_to 'いいえ', admin_income_credential_path(@income_credential), method: :put, params: { rejected: 'true' }

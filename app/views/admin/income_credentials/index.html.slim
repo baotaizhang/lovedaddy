@@ -1,0 +1,7 @@
+h1 未承認の所得証明一覧
+
+- @income_credentials_waiting.each do |ic|
+  p = "ニックネーム: #{ic.user.nickname}"
+  p = "所得証明のステータス: #{ic.status}"
+  p = "提出日: #{ic.created_at}"
+  p = link_to "承認はこちら", edit_admin_income_credential_path(ic)

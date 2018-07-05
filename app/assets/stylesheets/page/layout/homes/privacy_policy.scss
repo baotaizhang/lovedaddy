@@ -1,0 +1,18 @@
+body#homes-privacy_policy {
+  @import 'page/base_layout/common';
+
+  #table-list-box h3 {
+    margin-top: 30px;
+    color: #903d0c;
+    font-size: 17px;
+  }
+  #table-list-box h3 + ol {
+    margin-left: 15px;
+  }
+  #table-list-box h3 + ol + h3 + p {
+    margin-left: 15px;
+  }
+
+  @import 'page/base_layout/base_responsive';
+}
+

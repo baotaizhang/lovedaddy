@@ -1,0 +1,15 @@
+body#homes-law {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+
+  #law-box #table-layout .table-base th{
+    width:18%;
+  }
+
+  @media (max-width:848px) {
+    #law-box #table-layout .table-base th {
+      width:100%;
+    }
+  }
+}
+

@@ -1,0 +1,53 @@
+body#board_posts-index {
+  @import 'page/define/common_colors';
+  @import 'page/base_layout/user_search_form';
+  @import 'page/base_layout/user_list';
+
+  .usrlist {
+    a {
+      text-decoration: none;
+      transition: .3s;
+      &:hover {
+        opacity: 0.8;
+        background-color: #cccccc;
+      }
+    }
+  }
+
+  #board_btns {
+    margin-bottom: 30px;
+  }
+
+  .posted_at {
+    margin-bottom: 0px;
+    font-size: 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .income {
+    text-align: left;
+    font-size: 0.9em;
+  }
+  .online_status {
+    font-size: 0.9em;
+    margin-bottom: 0;
+  }
+  .purpose {
+    font-size: 0.8em;
+    margin: 5px 0;
+    color: #ffffff;
+    background-color: #ffaabb;
+    border-radius: 3px;
+  }
+  #post_title,
+  #post_content {
+    text-align: left;
+    font-size: 0.9em;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+

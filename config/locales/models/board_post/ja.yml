@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      board_post: 投稿
+    attributes:
+      board_post:
+        user: 投稿者
+        title: タイトル
+        content: 投稿内容
+        purpose: 目的
+  enumerize:
+    board_post:
+      purpose:
+        message: まずはメッセージから
+        meet: 今から会いたい
+        dinner: ディナーに行きたい
+        free_day: この日空いています

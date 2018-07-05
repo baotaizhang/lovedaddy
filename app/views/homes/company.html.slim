@@ -1,0 +1,50 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/homes/company'
+
+#company-box
+  #main-title
+    .container
+      .row
+        .col-12
+          h1
+            | 運営会社
+            span company
+  #table-layout
+    .container
+      .row
+        .col-12
+          table.table-base
+            tbody
+              tr
+                th 社名
+                td 株式会社ホリゾン・カンパニー
+              tr
+                th 代表者
+                td 島崎 和久斗
+              tr
+                th 住所
+                td 東京都港区麻布十番3-6-10
+              tr
+                th 電話番号
+                td
+                  a href="tel:050-5327-3823"  050-5327-3823
+                  br/
+                  | (お問い合わせはメールにてお願い致します。)
+              tr
+                th お問い合わせ
+                td
+                  | お問い合わせは
+                  a href="/contact.html"  こちら
+              tr
+                th 事業内容
+                td コミュニティサイトの運営管理
+              tr
+                th 資格
+                td インターネット異性紹介事業届出：30180018000
+              tr
+                th 総務省
+                td 第二電気通信事業 届出番号：A-29-16284
+              tr
+                th 商標登録
+                td LoveDaddy/ラブダディ
+

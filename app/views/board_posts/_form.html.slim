@@ -1,0 +1,15 @@
+= form_for @board_post do |f|
+  == render 'shared/valid_msg', object: @board_post
+  .form-area
+    = f.label :purpose
+    .select-btn
+      = f.select :purpose, BoardPost.purpose.options, {}, {class: 'form-control'}
+  .form-area
+    = f.label :title
+    = f.text_field :title, class: 'form-control', required: true
+  .form-area
+    = f.label :content
+    = f.text_area :content, id: 'post-msg', class: 'placeholder-color', size: '100x8'
+  button.form-btn type='submit'
+    | 投稿
+

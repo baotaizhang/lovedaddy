@@ -1,0 +1,8 @@
+- if defined?(to_user) && defined?(message) 
+  = form_for :message, url: api_messages_path, method: :post, html: {class: 'remote-refresh-form'}, onclick: "b(){};return false;" do |f|
+    = f.hidden_field :to_user_id, value: to_user.id, id: 'to_user_id'
+    = f.text_area :content, id: 'message_content', class: 'form-control refresh-input', placeholder: 'メッセージを入力して下さい', autofocus: true
+    .actions.text-right
+      button.btn.btn-primary type="submit"
+        | 送信
+

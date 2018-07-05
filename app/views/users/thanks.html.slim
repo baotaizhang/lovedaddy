@@ -1,0 +1,23 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/users/thanks'
+
+.container
+  .row.justify-content-center.align-items-center
+    #main-area.col-md-8.col-lg-9
+      h1 ご登録申請ありがとうございます
+      p
+        - if @user.present?
+          = @user.email
+        - else
+          | ご入力いただいたメールアドレス
+        | 宛に本登録のご案内をお送りいたしました。
+        br
+        | 記載されているURLより#{Settings.activation_token_expiration_period}時間以内に本登録をお願いいたします。
+      p
+        | 24時間を過ぎた場合や、メール通知がない場合には「#{link_to 'こちらから', new_activation_mail_users_path}」
+        br
+        | ご案内の再送信も可能です。
+      p
+        | 稀に迷惑メールフォルダに入ることもありますので、届かない場合はそちらもご確認いただきますと幸いです。
+      p
+        | もし不明点がございましたら、「#{link_to 'こちらから', new_contact_path}」お問い合わせいただけますと幸いです。

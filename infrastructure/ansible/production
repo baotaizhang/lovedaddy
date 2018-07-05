@@ -1,0 +1,8 @@
+[ctrl]
+prod-lovedaddy-ctrl
+
+[web]
+prod-lovedaddy-web
+
+[all:vars]
+env=production

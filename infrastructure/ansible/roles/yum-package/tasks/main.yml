@@ -1,0 +1,34 @@
+# file: roles/common/tasks/main.yml
+- name: Download EPEL repos
+  get_url:
+    url: http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    dest: /usr/local/src/epel-release-latest-7.noarch.rpm
+    mode: 0660
+  register: downloaded_epel_rpm
+
+- name: Added EPEL repos
+  command: rpm -ivh /usr/local/src/epel-release-latest-7.noarch.rpm
+  when: downloaded_epel_rpm | changed
+
+- name: install remi repository
+  yum: name=http://rpms.famillecollet.com/enterprise/remi-release-7.rpm state=present
+
+- name: yum dependencies
+  yum: name={{ item }} state=installed
+  with_items:
+    - git
+    - gcc-c++
+    - autoconf
+    - automake
+    - patch
+    - readline-devel
+    - zlib-devel
+    - libffi-devel
+    - openssl-devel
+    - libtool
+    - bison
+    - gdbm-devel
+    - libxslt-devel
+    - libxml2-devel
+    - libyaml-devel
+    - ncurses-devel

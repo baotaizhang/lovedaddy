@@ -1,0 +1,283 @@
+/* yarn packages
+ *= require slick-carousel/slick/slick.css
+ *= require slick-carousel/slick/slick-theme.css
+ *= require lightbox2/dist/css/lightbox.min.css
+ */
+
+body#users-show {
+  @import 'page/define/common_colors';
+
+  #wrap{
+    width: 100%;
+    display: table;
+    margin-bottom: 50px;
+  }
+  #left_contents{
+    display: table-cell;
+    width: 350px;
+    max-width: 350px;
+    h1{
+      font-size: 20px;
+      font-weight: 500;
+      color: $male_color;
+      margin-bottom: 20px;
+      &.female {
+        color: $female_color;
+      }
+    }
+  }
+  #pro_photo{
+    width: 84.5%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    position: relative;
+    &::after{
+      content:"";
+      display: block;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: 10px;
+      bottom: 10px;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: image-url("profile/mem01.svg");
+    }
+  }
+  #pro_thumb{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  #pro_photo li,
+  #pro_thumb li{
+    overflow: hidden;
+  }
+  #pro_thumb li{
+    max-width: 100px;
+  }
+  #pro_photo li img,
+  #pro_thumb li img{
+    width: 100%;
+  }
+  
+  #pro_thumb .slick-slide{
+    margin-right: 10px;
+  }
+  #msg_add{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .data_container{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  #pro_data{
+    width: 50%;
+    a.profile-edit-link {
+      color: #cc3333;
+    }
+    li{
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 12px;
+      &.name{
+        font-size: 24px;
+        color: $male_color;
+        margin-bottom: 18px;
+        &.female {
+          color: $female_color;
+        }
+      }
+      &.status{
+        border: 1px solid #000;
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        padding: 5px 0;
+        margin-bottom: 0;
+        &.male{
+          background-color: $male_color;
+          color: #ffffff;
+        }
+        &.female {
+          background-color: $female_color;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  #prove{
+    width: 48.5%;
+    &.female {
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+    li{
+      width: 48%;
+      a{
+        display: block;
+        width: 100%;
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+  #msg_add{
+    margin-top: 40px;
+  }
+  #msg_add li,
+  #blackBtn li{
+    width: 48.5%;
+    background-color: #d2000f;
+    border-radius: 5px;
+    -weblit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  #blackBtn li{
+    background-color: #333333;
+  }
+  #msg_add li a,
+  #blackBtn li a{
+    display: block;
+    padding: 15px 7px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+  }
+  #msg_add li a span:before,
+  #blackBtn li a span:before{
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 16px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    margin-right: 3px;
+    margin-left: -8px;
+  }
+  .send_msg span:before{
+    background-image: image-url("profile/w_mail.svg");
+  }
+  .add_fav span:before{
+    background-image: image-url("profile/w_heart.svg");
+  }
+  #blackBtn li:nth-child(1) a span:before{
+    background-image: image-url("profile/block.svg");
+  }
+  #blackBtn li:nth-child(2) a span:before{
+    background-image: image-url("profile/report.svg");
+  }
+  /***RIGHT CONTENTS***/
+  #right_contents{
+    display: table-cell;
+    padding-left: 4.6%;
+  }
+  #right_contents dl{
+    margin-bottom: 60px;
+  }
+  #right_contents dt{
+    font-size: 20px;
+    color: $male_color;
+    border-bottom: 1px solid $male_color;
+    margin-bottom: 20px;
+    font-weight: 500;
+    padding-bottom: 5px;
+  }
+  #right_contents.female dt{
+    color: $female_color;
+    border-bottom: 1px solid $female_color;
+  }
+  #right_contents table{
+    width: 100%;
+    font-size: 14px;
+  }
+  #right_contents th,
+  #right_contents td{
+    border: 1px solid #e6e6e6;
+  }
+  #right_contents th{
+    width: 170px;
+    text-align: left;
+    font-weight: 300;
+    background-color: #999999;
+    color: #fff;
+    padding: 10px;
+  }
+  #right_contents td{
+    padding: 10px 20px;
+  }
+  @media only screen and (max-width:959px){
+    #wrap{
+      display: block;
+    }
+    #left_contents{
+      display:table;
+      width: 100%;
+      max-width: 350px;
+    }
+    #left_contents h1 {
+      display: table-header-group;
+    }
+    #photo_container{
+      padding-top: 40px;
+      max-width: 350px;
+      display: table-cell;
+      padding-right: 4%;
+      box-sizing: border-box;
+    }
+    .data_container{
+      padding-top: 40px;
+      width: 350px;
+      max-width: 100%;
+    }
+    #right_contents{
+      display: block;
+      padding-left: 0;
+    }
+  }
+  @media only screen and (max-width:767px){
+      #left_contents,
+      #left_contents h1,
+      #photo_container{
+        display: block;
+      }
+      #left_contents{
+        margin-bottom: 40px;
+      }
+      #photo_container{
+        width: 65%;
+        margin: 0 auto 20px;
+        padding-top: 0;
+        padding-right: 0;
+        max-width: initial;
+      }
+      .data_container{
+        padding-top: 0;
+      }
+  }
+  @media only screen and (max-width:480px){
+    #photo_container{
+      width: 100%;
+    }
+    #right_contents th{
+      width: 130px;
+    }
+  }
+  @media only screen and (max-width:414px){
+    #msg_add li a span:before{
+      margin-left: -2px;
+    }
+  }
+}
+

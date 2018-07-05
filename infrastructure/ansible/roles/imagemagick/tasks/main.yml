@@ -1,0 +1,40 @@
+---
+- name: install dependented libraries
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - libICE
+    - libSM
+    - libX11-devel
+    - libXext-devel
+    - libXt
+    - libXt-devel
+    - graphviz
+    - bzip2-devel
+    - freetype-devel
+    - libtiff-devel
+    - OpenEXR-devel
+    - lcms2-devel
+    - libwebp-devel
+    - jbigkit-devel
+    - openjpeg2-devel
+    - jasper-devel
+    - libwmf-lite
+    - cairo
+    - fftw-libs-double
+    - ghostscript
+    - ghostscript-devel
+    - libraqm
+    - LibRaw
+
+- name: install imagemagick7
+  yum:
+    name: "{{ item }}"
+    enablerepo: remi
+    disablerepo: amzn2-core
+    state: present
+  with_items:
+    - ImageMagick7-libs
+    - ImageMagick7
+    - ImageMagick7-devel

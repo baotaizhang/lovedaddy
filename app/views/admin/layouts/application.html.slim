@@ -1,0 +1,9 @@
+doctype html
+html lang="ja"
+  head
+    == render 'admin/layouts/common_head'
+  body
+    == render 'admin/layouts/nav'
+    main
+      == render 'admin/layouts/message', flash: flash
+      == yield

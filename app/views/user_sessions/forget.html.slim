@@ -1,0 +1,10 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/users/forget'
+
+#form-box
+  .container
+    .row.justify-content-center.align-items-center
+      .col-md-8.col-lg-6
+        p.main-caption ご入力いただいたメールアドレスに再発行のご案内を致します。
+        == render 'forgot_password_form'
+

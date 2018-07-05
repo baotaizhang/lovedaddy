@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-12
+      - if current_user.income_credential_waiting?
+        h1 所得証明のご案内
+        p ただいま所得証明の確認中です。もうしばらくお待ち下さい。
+        = link_to 'マイページへ戻る', user_path(current_user)
+      - else
+        h1 所得証明のご案内
+        h2 収入確認書類のアップロード
+        == render 'form'

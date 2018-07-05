@@ -1,0 +1,157 @@
+// include in unique design
+//= require jquery/dist/jquery.min
+//= require rails-ujs
+//= require activestorage
+
+// yarn packages
+//= require lightbox2/dist/js/lightbox.min.js
+
+function scrollMessages(){
+  $('html,body').animate({scrollTop: $('#message')[0].scrollHeight}, 'fast');
+}
+
+$(document).ready(function() {
+  <%###### Function #####%>
+
+  <%### 更新メッセージ取得処理 %>
+  function loadMessages(){
+    $.ajax({
+      url: "<%= load_messages_path %>",
+      type: 'GET',
+      data: {
+        last_message_id: $('#last-message-id').val(),
+        to_user_id: $('#to_user_id').val()
+      },
+      dataType: 'script',
+      timeout: 5000,
+      success: function(result, textStatus, xhr) {
+      },
+      error: function(xhr, textStatus, error) {
+        console.error('メッセージデータの取得に失敗しました');
+        return false;
+      }
+    });
+  }
+
+  <%### 指定メッセージ削除処理 %>
+  function deleteMessage($messageRow){
+    $.ajax({
+      <%# JSで動的に`api_message_path(@message), method: :delete`を使用 %>
+      url: "/api/messages/" + $messageRow.find('.id-data').text(),
+      type: 'POST',
+      data: {
+        _method: 'delete'
+      },
+      timeout: 5000,
+      success: function(result, textStatus, xhr) {
+        $messageRow.remove();
+      },
+      error: function(xhr, textStatus, error) {
+        console.error('メッセージデータの削除に失敗しました');
+      }
+    });
+  }
+
+  <%### フォームの入力状態初期化処理 %>
+  function formRefresh(){
+    <%# テキスト送信の場合のみテキスト削除 %>
+    if($('#attachment').val() == '' && $('#camera').val() == '') {
+      $('#message-form .refresh-input').val('');
+    }
+    $('#attachment').val('');
+    $('#camera').val('');
+  }
+
+  <%### メッセージ送信処理 %>
+  function submitAjax($form){
+    var $button = $form.find('#submitBtn');
+    var $formData = new FormData();
+    var $image_camera = $form.find('input[name="message[image_camera]"]');
+    var $image_attachment = $form.find('input[name="message[image_attachment]"]');
+
+    <%# FormDataだとIE, Safariでget/delete等のメソッドが対応していないので個別でデータセット %>
+    $formData.append('utf8',                $form.find('input[name=utf8]').val());
+    $formData.append('authenticity_token',  $form.find('input[name=authenticity_token]').val());
+    $formData.append('message[to_user_id]', $form.find('input[name="message[to_user_id]"]').val());
+    $formData.append('message[content]',    $form.find('textarea[name="message[content]"]').val());
+
+    <%# iPhoneのみ画像が選択されていない状態で"file"のinputを送信するとエラーになる為ファイルがある時のみ送信 %>
+    if($image_camera.val().length > 0) {
+      $formData.append('message[image_camera]', $image_camera.prop("files")[0]);
+    }
+    if($image_attachment.val().length > 0) {
+      $formData.append('message[image_attachment]', $image_attachment.prop("files")[0]);
+    }
+
+    $.ajax({
+      url: $form.attr('action'),
+      type: $form.attr('method'),
+      processData: false,
+      contentType: false,
+      data: $formData,
+      timeout: 30000,
+
+      beforeSend: function(xhr, settings) {
+        $button.attr('disabled', true);
+        <%# 画像送信のみ送信中モーダルを表示 %>
+        if($image_camera.val().length > 0 || $image_attachment.val().length > 0) {
+          $('#loading-modal').show();
+        }
+      },
+      success: function(result, textStatus, xhr) {
+        formRefresh();
+        loadMessages();
+        scrollMessages();
+        $('#loading-modal').hide();
+      },
+      error: function(xhr, textStatus, error) {
+        formRefresh();
+        $('#loading-modal').hide();
+        console.log('送信に失敗しました');
+      },
+      complete: function(xhr, textStatus) {
+        $button.attr('disabled', false);
+      }
+    });
+  }
+
+  <%###### Event #####%>
+
+  <%### メッセージの送信ボタンクリックイベント %>
+  $('#message-form').on('submit', function(event) {
+    event.preventDefault();
+    submitAjax($(this));
+  });
+
+  <%### ファイル添付イベント %>
+  $('input[type=file]').on('change', function(event) {
+    event.preventDefault();
+    submitAjax($('#message-form'));
+  });
+
+  <%### 自分のメッセージクリックイベント %>
+  $(document).on('click', '.send', function(event) {
+    event.preventDefault();
+    if(confirm('メッセージを削除しますか？')){
+      deleteMessage($(this));
+    }else{
+      return false;
+    }
+  });
+
+  <%### 定期実行イベント %>
+  if(window.timer == null) {
+    window.timer = setInterval(function(){
+      loadMessages();
+    },1000);
+  }
+
+  <%# ※DOM構成時に下まで移動する動作をさせる %>
+  scrollMessages();
+});
+
+$(window).on('load', function(){
+  <%# 画像表示等の後に再度下まで移動させる %>
+  scrollMessages();
+});
+

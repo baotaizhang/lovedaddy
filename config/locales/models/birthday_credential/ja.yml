@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      birthday_credential: 本人証明
+    attributes:
+      birthday_credential:
+        user: ユーザー
+        photo_1: 画像_1
+        photo_2: 画像_2
+        photo_3: 画像_3
+        status: 承認ステータス
+  enumerize:
+    birthday_credential:
+      status:
+        approved: 承認済
+        waiting: 審査中
+        rejected: 却下

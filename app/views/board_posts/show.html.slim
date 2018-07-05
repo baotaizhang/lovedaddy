@@ -1,0 +1,40 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/board_posts/show'
+
+.container
+  .row
+    .order-sm-2.col-sm-8.col-md-9
+      .card
+        .card-body
+          h1 class=("female" if @board_post.user.sex.female?)
+            = @board_post.title
+          = @board_post.purpose_text
+          hr
+          = simple_format @board_post.content
+          .text-right
+            = "投稿日時：#{@board_post.formated_created_at}"
+    .order-sm-1.col-sm-4.col-md-3
+      .profile_image
+        = link_to @board_post.user do
+          = image_tag @board_post.user.display_main_image_url(:thumb)
+      .nickname class=("female" if @board_post.user.sex.female?)
+        = @board_post.user.nickname
+      .age
+        | #{@board_post.user.age}歳
+        - if @board_post.user.residence_id?
+          | ／#{@board_post.user.residence.name}
+      = @board_post.user.last_login_status
+      - unless current_user?(@board_post.user)
+        ul#msg_add.Flex
+          li
+            == render 'birthday_credentials/credential_guide_link', permit: can?(:create, Message), url: message_path(@board_post.user), link_class: 'send_msg' do
+              span メッセージを送る
+          li
+            = render 'favorite_users/favorite_button', user: @board_post.user
+  hr
+  .row
+    .col-12
+      - if current_user?(@board_post.user)
+        p= link_to '<< 掲示板投稿の履歴に戻る', history_board_posts_path
+      p= link_to '<< 掲示板投稿の一覧に戻る', board_posts_path
+

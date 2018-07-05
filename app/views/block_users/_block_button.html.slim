@@ -1,0 +1,9 @@
+- if defined?(user) && !current_user?(user)
+  p.release-btn
+    - if current_user.block_users.pluck(:id).include?(user.id)
+      = link_to block_user_path(user, 'block_user[blocked_user_id]' => user.id), method: :delete do
+        span ブロックを解除
+    - else
+      == render 'birthday_credentials/credential_guide_link', permit: can?(:manage, BlockUser), url: block_users_path(user, 'block_user[blocked_user_id]' => user.id), method: :post do
+        span ブロックに追加
+

@@ -1,0 +1,9 @@
+/ - if defined?(user) && !current_user?(user)
+p.release-btn
+  - if current_user.display_unsubscribe_users.pluck(:id).include?(user.id)
+    = link_to display_unsubscribe_user_path(user, 'display_unsubscribe_user[to_user_id]' => user.id), method: :delete, class: 'btn btn-dark' do
+      span 特定非表示を解除
+  - else
+    == render 'birthday_credentials/credential_guide_link', permit: can?(:manage, DisplayUnsubscribeUser), url: display_unsubscribe_users_path(user, 'display_unsubscribe_user[to_user_id]' => user.id), link_class: 'btn btn-danger', method: :post do
+      span 特定非表示の対象にする
+

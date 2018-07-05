@@ -1,0 +1,92 @@
+@import 'page/define/common_colors';
+
+body#board_posts-show {
+  h1, .nickname {
+    font-weight: 700;
+    color: $male_color;
+    &.female {
+      color: $female_color;
+    }
+  }
+  .profile_image img {
+    max-width: 100%;
+  }
+  .nickname {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  #msg_add{
+    margin-top: 20px;
+  }
+  #msg_add li,
+  #blackBtn li{
+    width: 100%;
+    background-color: #d2000f;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  #blackBtn li{
+    background-color: #333333;
+  }
+  #msg_add li a,
+  #blackBtn li a{
+    text-decoration: none;
+    display: block;
+    padding: 15px 7px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    transition: .3s;
+    &:hover {
+      opacity: .7;
+    }
+    span:before {
+      content: "";
+      display: inline-block;
+      width: 21px;
+      height: 16px;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      vertical-align: top;
+      margin-right: 3px;
+      margin-left: -8px;
+    }
+  }
+  .send_msg span:before{
+    background-image: image-url("profile/w_mail.svg");
+  }
+  .add_fav span:before{
+    background-image: image-url("profile/w_heart.svg");
+  }
+  #blackBtn li:nth-child(1) a span:before{
+    background-image: image-url("profile/block.svg");
+  }
+  #blackBtn li:nth-child(2) a span:before{
+    background-image: image-url("profile/report.svg");
+  }
+
+  @media only screen and (max-width:959px){
+    #msg_add li a,
+    #blackBtn li a{
+      font-size: 0.8em;
+    }
+  }
+  @media only screen and (max-width:480px){
+    .profile_image {
+      margin-top: 30px;
+    }
+  }
+  @media only screen and (max-width:414px){
+    #msg_add li a,
+    #blackBtn li a{
+      font-size: 1em;
+      span:before{
+        margin-left: -2px;
+      }
+    }
+  }
+}
+

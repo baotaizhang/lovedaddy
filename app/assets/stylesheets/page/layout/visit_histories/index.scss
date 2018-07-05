@@ -1,0 +1,58 @@
+body#visit_histories-index {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+  @import 'page/define/common_colors';
+
+  h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: $male_color;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  /*--content-----------*/
+
+  p {
+    margin-bottom: 0;
+  }
+  .visit-area {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #e0e0e0;
+  }
+  .visit-area:first-child {
+    padding-top: 20px;
+    border-top: solid 1px #e0e0e0;
+  }
+  .visit-remove a {
+    display: inline-block;
+    margin-top: 17px;
+    padding: 5px 9px;
+    font-size: 11px;
+    border: solid 1px #c8141e;
+    color: #c8141e;
+  }
+  .visit-remove a {
+    display: inline-block;
+    margin-top: 17px;
+    padding: 5px 9px;
+    font-size: 11px;
+    border: solid 1px #c8141e;
+    color: #c8141e;
+  }
+  .visit-age {
+    padding-top: 1px;
+    font-size: 14px;
+  }
+  .visit-name {
+    margin-right: 15px;
+  }
+  .visit-status {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #a9a9a9;
+    clear: left;
+  }
+
+  @import 'page/layout/visit_histories/responsive';
+}

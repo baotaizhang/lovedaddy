@@ -1,0 +1,105 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        sex: 性別
+        nickname: ニックネーム
+        birthday: 生年月日
+        birthplace_id: 出身地
+        residence_id: 居住地
+        height: 身長
+        body_shape: 体型
+        drinking: 飲酒
+        smoking: 喫煙
+        marital_relationship: 婚姻関係
+        motivation: 交際タイプ
+        occupation: 職業
+        income: 年収
+        property: 資産
+        role: 権限管理用ロール
+        introduction: 自己紹介
+        agreement: 会員規約とプライバシーポリシーに同意
+        main_profile_image: アイコン画像
+        profile_images: プロフィール画像
+  enumerize:
+    user:
+      sex:
+        male: 男性
+        female: 女性
+      marital_relationship:
+        single:  独身
+        married: 既婚
+      motivation:
+        lunch: お食事のみデート
+        start_with_meeting: 一度お会いしてから♪
+        needs_matching: 目的ニーズで進展♪
+        glad_having_invitation: お誘い頂ければ嬉しいです♪
+        having_invitation: お誘い下さい！
+      body_shape:
+        thin: 細め
+        little_thin: 少し細め
+        normal: 普通
+        little_thick: 少し太め
+        thick: 太め
+      drinking:
+        'no': 飲まない
+        sometime: 時々飲む
+        'yes': 飲む
+      smoking:
+        'no': 吸わない
+        sometime: 時々吸う
+        'yes': 吸う
+      occupation:
+        manager_big: 経営者・役員(上場企業)
+        manager_middle: 経営者・役員(社員100人以上)
+        practitioner: 医師(開業医)
+        government_official: 国家公務員
+        tokyo_stock: 上場企業(東証一部)
+        manager_small: 経営者・役員
+        investor: 投資家
+        doctor: 医師
+        dentist: 歯科医師
+        lawyer: 弁護士
+        accountant: 公認会計士
+        pilot: パイロット
+        flight_attendant: 客室乗務員
+        model: 芸能・モデル
+        announcer: アナウンサー
+        big_company: 上場企業 大手企業
+        trading_company: 大手商社
+        foreign_finance: 外資金融
+        foreign_investment_consultation: 外資コンサル
+        foreign_manufacturer: 外資メーカー
+        judicial_scrivener: 司法書士
+        administrative_scrivener: 行政書士
+        local_public_servant: 地方公務員
+        media: マスコミ・広告
+        creator: クリエイター
+        it: IT関連
+        architecture: 建築・インテリア
+        teacher: 講師・教師
+        sport: スポーツ選手
+        event_companion: イベントコンパニオン
+        receptionist: 受付
+        secretary: 秘書
+        apparel: アパレル・秘書
+        aestheticians: エステティシャン
+        hairdresser: 理容師・美容師
+        pharmacist: 薬剤師
+        nurse: 看護師
+        cooks: 調理師・栄養士
+        childminder: 保育士
+        bridal: ブライダル
+        clerical_work: 事務
+        employee: 会社員
+        student: 学生
+        other: その他
+      role:
+        admin: 管理者
+        general: 一般ユーザー
+

@@ -1,0 +1,28 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/options/index'
+
+.container
+  .row
+    .col-12
+      == render 'options/tab_menu', active: :option
+      -# TODO: 現在のプランと有料プラン情報の表示
+      .tab-content
+        #tab01
+          h1 利用機能設定
+          #form-box
+            = form_tag options_path do
+              - Option.showable_options(current_user).each do |option|
+                .form-area.separate-b
+                  p
+                    - if can? :manage, option
+                      => check_box_tag 'option_ids[]', option.id, @current_option_ids.include?(option.id), id: "option_id_#{option.id}"
+                    - else
+                      => check_box_tag 'option_ids[]', '', false, disabled: true
+                      | （#{link_to '本人確認', new_birthday_credential_path}が必要な機能です）
+                    = label_tag 'option_ids[]', option.name, class: 'check-box', for: "option_id_#{option.id}"
+                  p
+                    = "※#{option.description}"
+              button.btn.form-btn(type='submit')
+                | 更新する
+          .unsubscribe-link
+            | 退会の際は#{link_to 'こちら', new_contact_path}からお問い合わせください

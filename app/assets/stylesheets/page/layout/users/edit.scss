@@ -1,0 +1,21 @@
+body {
+  &#users-edit,
+  &#users-update {
+    @import 'page/component/basic_form';
+    @import 'page/component/loading_modal';
+
+    .img-preview {
+      height: 200px;
+      max-width: 100%;
+      max-height: 100px;
+      margin-bottom: 8px;
+    }
+
+    .nested-fields {
+      margin-bottom: 10px;
+      input[type=file]{
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/users/new_activation_mail'
+
+#form-box
+  .container
+    .row.justify-content-center.align-items-center
+      .col-md-8.col-lg-6
+        = form_tag create_activation_mail_users_path, method: :post do
+          = label_tag :email, '登録申請・メール確認中のメールアドレス'
+          = text_field_tag :email, nil, class: 'form-control', placeholder: 'example@love-daddy.jp', type: 'email'
+          .align-center
+            button.form-btn type="submit"  送信
+          p ※個人情報保護の観点から、登録申請等されていないメールアドレスに対しても送信完了のメッセージが表示されます。誤ったメールアドレスを登録されている場合はこちらから登録をお願いいたします。
+          p.registered-btn
+            = link_to '登録済の方はこちら', login_path

@@ -1,0 +1,140 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/homes/top'
+
+ul#main_img
+  li.pc
+    = image_tag 'top/mv.jpg'
+  li.sp
+    = image_tag 'top/sp_mv.jpg'
+section#sign_up01.signUp.CC
+  h1 出会いが未来を変える
+  p 初めての方は、新規登録から。
+  .text-center
+    = link_to '登録する', new_user_path, class: 'btn btn-danger btn-block btn-lg'
+    | ※18歳未満の方は利用できません。
+  -# TODO: メールを直接登録出来るように
+  -#.join.Flex
+  -#  input name="mail" placeholder="メールアドレスを入力してください。" type="text" /
+  -#  input type="submit" value="メール送信" /
+  -#small ※18歳未満の方は利用できません。
+section#about
+  .CC.Flex
+    dl
+      dt
+        = image_tag 'top/about_ld.png',  alt: 'Love Daddyとは？'
+      dd
+        p
+          span
+            | LoveDaddyはオンライン交際倶楽部です。
+          span
+            | オンライン交際倶楽部は、「男女の出会いの場」を提供し、お互いがWIN = WIN の関係を作ることを目的としています。
+          span
+            | 「将来のことで悩んでいる」、「金銭的な事情を抱えている」など、自分ではどうしようもできない事情で苦しんでいる女性がいまの日本には多数います。
+            | 一方で、経済的・社会的に成功を収めている男性もごく少数ですが世の中には確実に存在します。
+        p
+          | しかしそのような男女の出会いの場は非常に限られています。西麻布系ラウンジ、高級交際クラブなど仮にあるとしても、
+          | 非常にハードルが高く女性は容姿による採用面接によって採用されないことも多いです。男性であれば高い入会金・毎回かかるセッティング料、経済力審査が必要になります。
+        p もっと男女の出会いのハードルを低くし、価値ある出会いを創出できる大人の社交場でありたい。LoveDaddyはそう考えています。
+    .abLinks.pc
+      a href="#step" 
+        = image_tag 'top/search_pc.svg', alt: '出会いを探す方法'
+    .abLinks.pc
+      a href="#support" 
+        = image_tag 'top/function_pc.svg', alt: '機能の紹介'
+    ul.sp.sp_ablink
+      li
+        a href="#step"  出会いを探す方法
+      li
+        a href="#support"  機能の紹介
+section#why.CC
+  h2
+    | なぜ女性会員が
+    span 多いのか？
+  ol
+    li
+      dl
+        dt
+          span.num 01
+          p
+            | 男性の身元確認を必須とし、
+            span 徹底した安心ユーザーばかり。
+        dd
+          | 業者男性の徹底排除や、運営によるパトロールにより
+          span 通報などのあった男性は徹底して排除をしています。
+    li
+      dl
+        dt
+          span.num 02
+          p
+            | 徹底したプライバシー保護と
+            span 365日体制のサーバー管理
+        dd
+          | 会後には、一切のデータ削除を保証をしています。
+          span また365日24時間のサーバー管理を行なっております。
+    li
+      dl
+        dt
+          span.num 03
+          p
+            | 交際クラブのように写真撮り、
+            span 動画撮りを強制しない。
+        dd
+          | 交際クラブでは全会員に写真、動画が公開されますが、当サイトでは、
+        span 公開対象を制限することができ、特定の人に見せる等、プライバシーを保護できます。
+section#step
+  .CC
+    h2.redTitle 出会いを見つける3つのステップ
+    p.underRed LoveDaddyの非常に簡単な3ステップをご紹介。
+    ul.Flex
+      li
+        dl
+          dt 理想の相手を探す
+          dd プロフィール詳細検索(全ての検索項目をご用意)を活用して理想のお相手を探すことができます。
+      li
+        dl
+          dt 気になったお相手に連絡する
+          dd 気になったお相手が見つかったら、メッセージ機能やお気に入り機能を使って、アプローチすることができます。
+      li
+        dl
+          dt デートを楽しむ
+          dd お洒落なレストランなどで素敵なデートをお楽しみください。時を忘れるデートは人生を豊かにします。
+section#support
+  .CC
+    h2.redTitle 5つの安心・安全サポート
+    p.underRed 多くのユーザーに選ばれる理由。
+    ul.Flex
+      li
+        dl
+          dt 監視体制
+          dd 不適切な言動をチェックする監視体制を敷いております。
+      li
+        dl
+          dt 有人サポート
+          dd お問い合わせに対して、24時間以内に返答いたします。
+      li
+        dl
+          dt 年齢認証
+          dd 年齢証明を必須とし、サイトの健全化を図っております。
+      li
+        dl
+          dt セキュリティー強化
+          dd 退会処理した場合は、全てのデータ※1を削除いたします。
+      li
+        dl
+          dt 通報
+          dd 安心、安全の為、通報があれば、厳正なる処置をとります。
+    #notes
+      | ※1 再登録防止の為メールアドレス以外
+section#sign_up02.signUp.CC
+  h1 出会いが未来を変える
+  p 初めての方は、新規登録から。
+  .text-center
+    = link_to '登録する', new_user_path, class: 'btn btn-danger btn-block btn-lg'
+    | ※18歳未満の方は利用できません。
+  -# TODO: メールを直接登録出来るように
+  -#.join.Flex
+  -#  input name="mail" placeholder="メールアドレスを入力してください。" type="text" /
+  -#  input type="submit" value="メール送信" /
+  -#small ※18歳未満の方は利用できません。
+a#TOP href="#" 
+

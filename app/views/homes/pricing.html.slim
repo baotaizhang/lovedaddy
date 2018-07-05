@@ -1,0 +1,174 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/homes/pricing'
+
+section#price-box
+  .container
+    .row
+      .col-12
+        h2 料金
+        .price-box-inner.price-area
+          table.table-base
+            tbody
+              tr
+                th 各プラン
+                th シルバー
+                th ゴールド
+                th プラチナ
+              tr
+                td 月額
+                td 3,980円
+                td 6,980円
+                td 14,980円
+              tr
+                td 定員数
+                td
+                  span.accent-color 333人
+                td
+                  span.accent-color 333人
+                td
+                  span.accent-color 333人
+              tr
+                td メッセージ回数
+                td 100通／月
+                td 無制限
+                td 無制限
+              tr
+                td 掲示板投稿回数
+                td 1回／月
+                td 無制限
+                td 無制限
+              tr
+                td プロフィール閲覧
+                td 無制限
+                td 無制限
+                td 無制限
+              tr
+                td ポイント付与
+                td
+                  span.accent-color 500ポイント
+                td
+                  span.accent-color 1,000ポイント
+                td
+                  span.accent-color 2,000ポイント
+              tr
+                td 機能
+                td
+                td
+                td 特定非表示機能
+              tr
+                td イベント
+                td &nbsp;
+                td &nbsp;
+                td
+                  span.accent-color パーティ招待
+              tr
+                td サービス
+                td &nbsp;
+                td &nbsp;
+                td コンシェルジュサービス
+              tr
+                td 返金保証
+                td &nbsp;
+                td
+                  span.accent-color ７日間
+                td
+                  span.accent-color ７日間
+section#point-box
+  .container
+    .row
+      .col-12
+        h2 ポイント
+        table.table-base
+          tbody
+            tr
+              th メッセージ編集・ 削除
+              td 1回につき、50ポイント消化
+            tr
+              th 花束プレゼント
+              td
+                span 100ポイント
+                span 500ポイント
+                span 1,000ポイント
+                span 2,000ポイント
+            tr
+              th 特定非表示機能
+              td 1日につき、200ポイント消化
+            tr
+              th 既読をつけない
+              td 1日につき、100ポイント消化
+        p ※ポイントは1ポイント1円でご購入できます。
+section#service-box
+  .content-bg
+    .container
+      .row
+        .col-12
+          h2 コンシェルジュサービス
+          .price-box-inner
+            .price-img
+              figure
+                = image_tag 'homes-pricing/img-price01.jpg'
+            .price-box-caption
+              p.sub-ttl 東京都内のレストラン紹介
+              p お好みにあったお店の手配 (隠れ屋レストランなど、ご要望に応じたお店の手配)
+              | 素敵な女性を見つけるためのアドバイス
+              p 運営側のノウハウを提供 （コラムなどにも記載していないノウハウをご提供）
+section#warranty-box
+  .container
+    .row
+      .col-12
+        h2 7日間返金保証
+        .price-box-inner
+          .price-img
+            figure
+              = image_tag 'homes-pricing/img-price02.jpg'
+          .price-box-caption
+            p
+              | 全てのお客様に、安心してご利用いただくため。
+              br
+            p.sub-ttl
+              | LoveDaddyでは、コース料金に応じて
+              br
+              | 「7日間
+              span.accent-color> 全額返金保証
+              | 」を導入しております。
+            | マッチング系サービスにおいて、
+            span.accent-color> 最高の顧客満足度
+            | を掲げ、サービス開発・運営をしております。
+            br
+            | したがって、最高水準の満足度のお約束をすべく、
+            | サービス利用開始から、7日間は
+            span.accent-color いかなる理由でも、ご納得いただけないときは、全額を返金致します。
+        .list-warranty
+          p
+            | 例えば、以下のような場合でも、7日間
+            span.accent-color> 全額保証
+            | の対象とさせていただきます。
+          ol
+            li 好みの女性がいなかった
+            li 好みの女性に連絡したが、返信が来なかった
+            li 思っていたサービスと違った
+            li 繁忙になりそうで、サービスを利用できなくなった。
+section#party-box
+  .content-bg
+    .container
+      .row
+        .col-12
+          h2 パーティ招待
+          .price-box-inner
+            .price-img
+              figure
+                = image_tag 'homes-pricing/img-price03.jpg'
+            .price-box-caption
+              p.sub-ttl
+                | 都内某所で開催されている
+                span.accent-color パーティー
+                | に招待
+              p
+                | 繰り広げられているのは、プライバシーに配慮された空間で、
+                br
+                span.accent-color 素敵な女性
+                | の複数人にお会いできること。
+                br
+                span.accent-color 毎月１回
+                | を定期的に開催して行くことを検討しております。
+

@@ -1,0 +1,34 @@
+- if defined?(board_posts) || board_posts.present?
+  .scroll-area
+    ul.usrlist.Flex
+      - board_posts.each do |board_post|
+        - user = board_post.user
+        - next if user.display_deleted?(current_user)
+        li
+          = link_to board_post do
+            dl
+              dd.posted_at
+                = "投稿日時：#{board_post.formated_created_at}"
+              - unless current_user?(user)
+                -# 投稿履歴では表示しない
+                dt.usr_photo
+                  = image_tag user.display_main_image_url(:thumb)
+              dd.name.l_name= user.nickname
+              dd.age_place
+                | #{user.age}歳
+                - if user.residence_id?
+                  | ／#{user.residence.name}
+              dd.online_status
+                = user.last_login_status
+              dd.purpose #{board_post.purpose_text}
+              dd#post_title
+                = board_post.title.truncate(30)
+              dd#post_content
+                = board_post.content.truncate(100)
+              - if current_user.sex.female?
+                dd.income
+                  = "年収：#{user.range_text(:income)}"
+                  br
+                  = "資産：#{user.range_text(:property)}"
+    .hide-pagination
+      = paginate board_posts

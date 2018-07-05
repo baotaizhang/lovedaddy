@@ -1,0 +1,89 @@
+- if logged_in?
+  header#mem_header
+    nav#mem_menu.Flex.CC
+      #logo
+        = link_to image_tag('navbar/logo.svg', alt: 'Love Daddy 人生を変えるオンライン交際倶楽部'), root_path
+      .menuBtn.memBtn.sp
+        span
+        span
+        span
+      ul.Flex
+        li
+          = link_to '検索', users_path
+        li
+          = link_to '掲示板', board_posts_path
+        li
+          = link_to messages_path do
+            | メッセージ
+            - unless @unread_message_user_count.zero?
+              span= @unread_message_user_count.inspect
+        li
+          = link_to 'お気に入り', favorite_users_path
+        li
+          = link_to '訪問者', visit_histories_path
+          -#TODO: 訪問者のカウントを実装した際にメッセージと同様にspanを入れる
+      #pcmenuBtn.menuBtn.pc
+        span
+        span
+        span
+    nav#sp_menu
+      ul
+        li.menuBtn.pc
+          span
+          span
+          span
+        li
+          = link_to 'マイページ', user_path(current_user)
+        li
+          = link_to '設定', options_path
+        li
+          = link_to 'ログアウト', :logout, method: :post
+        li#menu_logo
+          = image_tag 'navbar/logo.svg', alt: 'Love Daddy 人生を変えるオンライン交際倶楽部'
+- else
+  header#non_mem_header
+    nav#header_container.CC.Flex
+      #logo
+        = link_to image_tag('navbar/logo.svg', alt: 'Love Daddy 人生を変えるオンライン交際倶楽部'), root_path
+      ul#gnav
+        li.menuBtn.spBtn
+          span
+          span
+          span
+        li.basic
+          = link_to 'LoveDaddyとは', about_path
+        -#li.basic
+        -#  = link_to 'ご利用の流れ', '#'
+        li.basic
+          = link_to '料金', pricing_path
+        -#li.basic
+        -#  = link_to 'コラム', '#'
+        -#li.basic
+        -#  = link_to 'よくあるご質問', '#'
+        li.loginBtn.navBtn
+          = link_to 'ログイン', :login
+        li.signUpBtn.navBtn
+          = link_to '初めての方 【新規登録】', new_user_path
+        li.menuBtn.pcBtn
+          span
+          span
+          span
+    nav#sp_menu
+      .menuBtn
+        span
+        span
+        span
+      ul
+        li
+          = link_to 'LoveDaddyとは', about_path
+        -#li
+        -#  = link_to 'ご利用の流れ', '#'
+        li
+          = link_to '料金', pricing_path
+        -#li
+        -#  = link_to 'コラム', '#'
+        -#li
+        -#  = link_to 'よくあるご質問', '#'
+        li#menu_logo
+          = image_tag 'navbar/logo.svg', alt: 'Love Daddy 人生を変えるオンライン交際倶楽部'
+

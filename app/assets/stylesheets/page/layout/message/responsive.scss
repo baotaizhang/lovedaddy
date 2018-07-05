@@ -1,0 +1,23 @@
+@media (max-width:580px) {
+  #messages-box .messages-caption {
+    font-size: 15px;
+  }
+  #messages-box .messages-date, #messages-box .messages-posted, #messages-box .messages-status {
+    font-size: 13px;
+    margin: 4px 9px 0 0;
+  }
+  #messages-box .messages-age {
+    font-size: 14px;
+    padding-top: 0;
+  }
+  #messages-box .messages-unread {
+    position: absolute;
+    top: -20px;
+    right: 16px;
+    background: #015087;
+    padding: 1px 10px;
+    color: #fff;
+    font-size: 11px;
+    border-radius: 0px 0px 0px 5px;
+  }
+}

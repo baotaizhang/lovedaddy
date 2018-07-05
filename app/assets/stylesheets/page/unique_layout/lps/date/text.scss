@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+/*webフォントアイコン*/
+@font-face {
+font-family: 'LigatureSymbols';
+src: url('font/LigatureSymbols-2.11.eot');
+src: url('font/LigatureSymbols-2.11.eot?#iefix') format('embedded-opentype'),
+url('font/LigatureSymbols-2.11.woff') format('woff'),
+url('font/LigatureSymbols-2.11.ttf') format('truetype'),
+url('font/LigatureSymbols-2.11.svg#LigatureSymbols') format('svg');
+}
+.lsf {
+font-family: 'LigatureSymbols';
+-webkit-text-rendering: optimizeLegibility;
+-moz-text-rendering: optimizeLegibility;
+-ms-text-rendering: optimizeLegibility;
+-o-text-rendering: optimizeLegibility;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+-moz-font-smoothing: antialiased;
+-ms-font-smoothing: antialiased;
+-o-font-smoothing: antialiased;
+font-smoothing: antialiased;
+-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+-moz-font-feature-settings: "liga=1, dlig=1";
+-ms-font-feature-settings: "liga" 1, "dlig" 1;
+-o-font-feature-settings: "liga" 1, "dlig" 1;
+font-feature-settings: "liga" 1, "dlig" 1;
+font-weight:normal !important;
+display:inline-block;
+margin-right:5px;
+font-size:125%;
+}
+.lsf-icon:before {
+content:attr(title);
+margin-right:0.3em;
+font-size:130%;
+font-family: 'LigatureSymbols';
+-webkit-text-rendering: optimizeLegibility;
+-moz-text-rendering: optimizeLegibility;
+-ms-text-rendering: optimizeLegibility;
+-o-text-rendering: optimizeLegibility;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+-moz-font-smoothing: antialiased;
+-ms-font-smoothing: antialiased;
+-o-font-smoothing: antialiased;
+font-smoothing: antialiased;
+-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+-moz-font-feature-settings: "liga=1, dlig=1";
+-ms-font-feature-settings: "liga" 1, "dlig" 1;
+-o-font-feature-settings: "liga" 1, "dlig" 1;
+font-feature-settings: "liga" 1, "dlig" 1;
+}
+/*webフォントアイコン*/
+
+strong{ font-weight:bold;}
+strong.strong{ font-size:125%;}
+@media screen and (max-width:640px){
+strong.strong{ font-size:116%;}
+}
+.small{ font-size: 75%;}
+
+.mincho { font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'メイリオ', Meiryo, serif;}
+
+.normal{ font-weight:normal;}
+.bold { font-weight:bold;}
+.italic{ font-family: 'Times New Roman',serif; font-style: italic; letter-spacing:0.05em;}
+
+.white{ color:#fff;}
+.black{ color:#333;}
+.red{ color:#c83232;}
+.blue{ color:#326496;}
+
+.bg_y{
+background:linear-gradient(transparent 50%, #fafa64 30%);
+background: -webkit-linear-gradient(transparent 50%, #fafa64 30%);
+font-weight: bold;
+}
+
+.under_line{ text-decoration:underline;}
+.line_through{ text-decoration:line-through;}

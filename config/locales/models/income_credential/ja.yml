@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      income_credential: 収入証明
+    attributes:
+      income_credential:
+        user: ユーザー
+        photo_1: 画像_1
+        photo_2: 画像_2
+        photo_3: 画像_3
+        status: 承認ステータス
+  enumerize:
+    income_credential:
+      status:
+        approved: 承認済
+        waiting: 審査中
+        rejected: 却下

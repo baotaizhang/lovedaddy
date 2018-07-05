@@ -1,0 +1,3 @@
+---
+nginx_server_tokens: "off"
+nginx_includes: []

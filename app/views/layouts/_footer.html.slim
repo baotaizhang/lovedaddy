@@ -1,0 +1,17 @@
+.CC
+  nav#sns_nav.Flex
+    = link_to image_tag('navbar/insta.svg', alt: 'instagram'), Settings.sns.instagram.url, target: '_blank'
+    = link_to image_tag('navbar/tw.svg', alt: 'twitter'), Settings.sns.twitter.url, target: '_blank'
+    = link_to image_tag('navbar/fb.svg', alt: 'Facebook'), Settings.sns.facebook.url, target: '_blank'
+    = link_to image_tag('navbar/line.svg', alt: 'Facebook'), Settings.sns.line.url, target: '_blank'
+  nav#footer_nav.Flex
+    = link_to '会社概要', company_path
+    = link_to '会員規約', agreement_path
+    = link_to 'プライバシーポリシー', privacy_policy_path
+    = link_to '反社会的勢力への対応方針', antisocial_path
+    = link_to '18歳以上の確認', limitation_path
+    = link_to '特定商取引法に基づく表記', law_path
+    = link_to 'お問合わせ', new_contact_path
+  #footer_logo
+    = link_to image_tag('navbar/logo.svg', alt: 'Love Daddy 人生を変えるオンライン交際倶楽部'), root_path
+

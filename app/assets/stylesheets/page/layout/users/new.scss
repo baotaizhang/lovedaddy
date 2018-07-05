@@ -1,0 +1,13 @@
+body#users-new, body#users-create {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+
+  #form-box .form-area:nth-child(2) {
+    margin-bottom:5px;
+  }
+
+  // なぜかcommon cssでmain input[type=checkbox] がhiddenになっていて表示されないの下記追加
+  input[type=checkbox] {
+    display: inline-block !important;
+  }
+}

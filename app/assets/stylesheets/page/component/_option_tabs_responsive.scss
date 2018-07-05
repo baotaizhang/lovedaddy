@@ -1,0 +1,75 @@
+@media (max-width:580px) {
+  h2 {
+    margin: 20px 0 25px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .tab-menu {
+    margin-bottom: 20px;
+  }
+  .tab-menu::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .tab-menu li a {
+    display: inline-block;
+    padding: 13px;
+    width: 100%;
+    border-radius: 0;
+  }
+  .tab-menu li:nth-child(1) a, .tab-menu li:nth-child(3) a {
+    border-right: solid 1px #ccc;
+  }
+  .tab-menu li:nth-child(1) a, .tab-menu li:nth-child(2) a, .tab-menu li:nth-child(3) a, .tab-menu li:nth-child(4) a {
+    border-bottom: solid 1px #ccc;
+  }
+  .tab-menu li:nth-child(5) {
+    width: 100%;
+  }
+  .tab-menu {
+    margin: 0;
+    padding: 0;
+    display: inherit;
+    flex-flow: inherit;
+    justify-content: inherit;
+  }
+  .tab-menu li a.active:after {
+    display: none;
+  }
+  .tab-menu li {
+    float: left;
+    width: 50%;
+  }
+  .tab-menu li {
+    margin-right: 0;
+  }
+  .tab-menu li a:hover, .tab-menu li a.active {
+    position: initial;
+  }
+  /*--contents-----------*/
+  .usr-area .usr-name {
+    padding-top: 1px;
+  }
+  .usr-area .usr-name, .usr-area .usr-age {
+    font-size: 13px;
+  }
+  .usr-area .usr-date, .usr-area .usr-posted {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #a9a9a9;
+  }
+  .usr-area .usr-posted, .usr-area .usr-status {
+    margin-top: 4px;
+    font-size: 13px;
+  }
+  .usr-area .release-btn a {
+    margin-top: 9px;
+    padding: 4px 6px;
+  }
+  .unsubscribe-link {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 14px;
+  }
+}

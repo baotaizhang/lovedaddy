@@ -1,0 +1,10 @@
+- if defined?(user) && !current_user?(user)
+  .add_fav
+    - if current_user.favorite_users.pluck(:id).include?(user.id)
+      p.favorite-remove
+        = link_to favorite_user_path(user, 'favorite_user[to_user_id]' => user.id), method: :delete do
+          span お気に入りを解除
+    - else
+      p.favorite-add
+        = link_to favorite_users_path(user, 'favorite_user[to_user_id]' => user.id), method: :post do
+          span お気に入りに追加

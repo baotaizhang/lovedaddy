@@ -1,0 +1,27 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/block_users'
+
+.container
+  .row
+    .col-12
+      == render 'options/tab_menu', active: :block
+      .tab-content
+        #tab04
+          h1 ブロック中のユーザー
+          - if @users.present?
+            - @users.each do |user|
+              -# TODO: 掲示板等での表示パーシャル化
+              .usr-area
+                .row
+                  .col-4.col-sm-4.col-md-3.col-lg-2
+                    = link_to user do
+                      = image_tag user.display_main_image_url(:thumb), class: 'img-fluid'
+                  .col-8.col-sm-8.col-md-9.col-lg-10
+                    p.usr-name #{user.nickname}
+                    p.usr-age #{user.age}歳
+                    p.usr-status #{user.last_login_status}
+                    = render 'block_button', user: user
+          - else
+            p
+              | まだブロックしているユーザーはいません
+

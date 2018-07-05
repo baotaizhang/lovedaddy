@@ -1,0 +1,291 @@
+/* include in unique design
+ *= require common/0_reset
+ *
+ * yarn packages
+ *= require lightbox2/dist/css/lightbox.min.css
+ */
+
+body#messages-show {
+  @import 'page/define/common_colors';
+  @import 'page/component/loading_modal';
+
+  margin: 0px;
+  .id-data {
+    display: none;
+  }
+
+  .CC{
+    width: 86%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  header{
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+  }
+  #pageBack{
+    display: block;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    left: 5%;
+  }
+  #pageBack img{
+    width: 100%;
+  }
+  #mem_photo{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 10px;
+    img {
+      object-fit: cover;
+      width: 60px;
+      height: 60px;
+    }
+  }
+  #mem_photo img{
+    width: 100%;
+  }
+  header dl{
+    display: inline-block;
+    color: #fff;
+    text-align: left;
+    vertical-align: middle;
+  }
+  header dt{
+    font-size: 22px;
+  }
+  header dd{
+    font-size: 12px;
+  }
+  .msgDate{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+  #message {
+    padding-top: 90px;
+    padding-bottom: 100px;
+    img {
+      max-height: 300px;
+      max-width: 100%;
+    }
+  }
+  /**送信側**/
+  #message div{
+    position: relative;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    width: 88%;
+    max-width: 550px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .send{
+    color: #fff;
+    margin-right: 0;
+    margin-left: auto;
+    cursor: pointer;
+
+    &.male {
+      background-color: $male_color;
+      &::after{
+        background-image: image-url(messages_show/send);
+      }
+    }
+
+    &.female {
+      background-color: $female_color;
+      &::after{
+        background-image: image-url(messages_show/send_m);
+      }
+    }
+
+    &::after{
+      top: 0;
+      right: -20px;
+    }
+  }
+  #message div::after{
+    content: "";
+    display: block;
+    width:36px;
+    height: 27px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+  .return{
+    background-color: #e6e6e6;
+  }
+  .return::after{
+    background-image: image-url(messages_show/return);
+    top: 0;
+    left: -20px;
+  }
+  .read{
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    text-align: right;
+    left: -40px;
+    bottom: 20px;
+    color: #333;
+  }
+  .sendTime{
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    text-align: right;
+    left: -40px;
+    bottom: 0;
+    color: #333;
+  }
+  .return .sendTime{
+    right: -40px;
+  }
+  footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    label{
+      width: 38px;
+      display: table-cell;
+      margin-right: 8px;
+      vertical-align: top;
+      padding-top: 5px;
+      cursor: pointer;
+      img {
+        width: 38px;
+        max-height: 100%;
+        pointer-events: none;
+      }
+      input[type=file]{
+        display: none;
+      }
+      @media only screen and (min-width:566px){
+        &.attachment-label{
+          display: none;
+        }
+      }
+    }
+  }
+  #footer_container{
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+  }
+  footer a img{
+    width: 100%;
+  }
+  #comment_container{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+  }
+  footer textarea{
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-right: 60px;
+    resize: vertical;
+    min-height: 60px;
+  }
+  footer textarea::placeholder{
+    font-size: 14px;
+  }
+  input[type="image"]{
+    width: 35px;
+    position: absolute;
+    top: 28px;
+    margin-top: -18px;
+    right: 15px;
+  }
+  #submitBtn{
+    display: table-cell;
+    width: 75px;
+  }
+  input[type="submit"]{
+    display: table-cell;
+    background-color: #c8141e;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    padding: 13px 0;
+    line-height: 1;
+  }
+  
+  @media only screen and (max-width:768px){
+    #footer_container{
+      width: 96%;
+    }
+  }
+  
+  @media only screen and (max-width:567px){
+    #pageBack{
+      width: 15px;
+      margin-top: -13px;
+    }
+    #footer_container {
+      border-spacing: 6px;
+    }
+    footer a {
+      width: 30px;
+    }
+    input[type="image"] {
+      width: 25px;
+      right: 10px;
+      top: 24px;
+    }
+    footer textarea {
+      padding: 8px;
+      padding-right: 45px;
+    }
+    #submitBtn {
+      width: 50px;
+    }
+    input[type="submit"]{
+      font-size: 14px;
+      padding: 9px 0;
+    }
+  }
+}
+

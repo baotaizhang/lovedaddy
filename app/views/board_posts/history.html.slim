@@ -1,0 +1,28 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/board_posts/history'
+
+h1 掲示板の投稿履歴
+#boards-box
+  .container
+    - if @board_posts.present?
+      - @board_posts.each do |board_post|
+        .boards-area
+          .row
+            .col-3.col-sm-2
+              = link_to board_post do
+                = image_tag board_post.user.decorate.display_main_image_url
+            .col-9.col-sm-10
+              p.boards-cate.meet #{board_post.purpose_text.truncate(15)}
+              p.boards-posted 投稿日時：#{board_post.formated_created_at}
+              p.boards-ttl= link_to board_post.title.truncate(26), board_post
+              p.boards-txt= link_to board_post.content.truncate(34), board_post
+              p.boards-btn-delete
+                = link_to '編集', edit_board_post_path(board_post)
+                = link_to '訪問履歴の削除', board_post, method: :delete
+    / FIXME 下記デザインなし
+    - else
+      | 投稿はありません
+    / FIXME 下記デザインなし
+    .row
+      .col-12
+        p= link_to '<< 掲示板投稿の一覧に戻る', board_posts_path

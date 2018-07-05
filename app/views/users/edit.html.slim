@@ -1,0 +1,133 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/users/edit'
+- content_for :page_javascript do
+  = javascript_include_tag 'page/users-edit'
+
+.container
+  .row
+    .col-12
+      h1 プロフィール入力
+      = form_for @user, html: {class: 'basic-form'} do |f|
+        == render 'shared/valid_msg', object: @user
+        hr
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :main_profile_image
+          .col-sm-6
+            - if f.object.main_profile_image.present?
+              = image_tag f.object.main_profile_image.url, class: 'img-preview'
+              br
+            = f.file_field :main_profile_image, accept: 'image/*'
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :profile_images
+          .col-sm-6
+            #profile_image_form
+              = f.fields_for :profile_images, @user.profile_images do |profile_image|
+                = render 'profile_image_fields', f: profile_image
+              .links
+                .text-right
+                  = link_to_add_association '画像の追加', f, :profile_images, class: 'btn btn-dark'
+        hr
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :nickname
+          .col-sm-6
+            p = f.object.nickname
+            .description
+              | ※初回のみ変更可能
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :sex
+          .col-sm-6
+            p = f.object.sex_text
+            .description
+              | ※初回のみ変更可能
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :birthday
+          .col-sm-6
+            p = f.object.birthday
+            .description
+              | ※初回のみ変更可能
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :birthplace_id
+          .col-sm-6
+            = f.collection_select :birthplace_id, Prefecture.all, :id, :name, {include_blank: true}, {class: 'form-control'}
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :residence_id
+          .col-sm-6
+            = f.collection_select :residence_id, Prefecture.all, :id, :name, {include_blank: true}, {class: 'form-control'}
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :height
+          .col-sm-6
+            = f.select :height, User.select_range_list(:height), {include_blank: true}, {class: 'form-control'}
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :body_shape
+          .col-sm-6
+            = f.select :body_shape, User.body_shape.options, {include_blank: true}, {class: 'form-control'}
+        hr
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :drinking
+          .col-sm-6
+            .form-check.form-check-inline
+              - User.drinking.options.each do |name, value|
+                = f.radio_button :drinking, value.to_sym, class: 'form-check-input'
+                = f.label :drinking, name, class: 'form-check-label'
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :smoking
+          .col-sm-6
+            .form-check.form-check-inline
+              - User.smoking.options.each do |name, value|
+                = f.radio_button :smoking, value.to_sym, class: 'form-check-input'
+                = f.label :smoking, name, class: 'form-check-label'
+        hr
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :occupation
+          .col-sm-6
+            = f.select :occupation, User.occupation.options, {include_blank: true}, {class: 'form-control'}
+        - if f.object.sex.male?
+          .row
+            .col-sm-3.col-lg-2
+              .title-label= f.label :income
+            .col-sm-6
+              - if @user.income_credential_approved?
+                = @user.range_text(:income)
+              - else
+                = f.select :income, User.select_range_list(:income), {include_blank: true}, {class: 'form-control'}
+          .row
+            .col-sm-3.col-lg-2
+              .title-label= f.label :property
+            .col-sm-6
+              = f.select :property, User.select_range_list(:property), {include_blank: true}, {class: 'form-control'}
+          .row
+            .col-sm-3.col-lg-2
+              .title-label= f.label :marital_relationship
+            .col-sm-6
+              .form-check.form-check-inline
+                - User.marital_relationship.options.each do |name, value|
+                  = f.radio_button :marital_relationship, value.to_sym, class: 'form-check-input'
+                  = f.label :marital_relationship, name, class: 'form-check-label'
+        - if f.object.sex.female?
+          .row
+            .col-sm-3.col-lg-2
+              .title-label= f.label :motivation
+            .col-sm-6
+              = f.select :motivation, User.motivation.options, {include_blank: true}, {class: 'form-control'}
+        hr
+        .row
+          .col-sm-3.col-lg-2
+            .title-label= f.label :introduction
+          .col-sm-6
+            = f.text_area :introduction, class: 'form-control', placeholder: 'はじめまして ...'
+        = f.submit '登録する', class: 'btn btn-dark', data: { disable_with: "送信中..." } 
+
+== render 'shared/loading_modal'
+

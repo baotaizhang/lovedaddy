@@ -1,0 +1,10 @@
+body#users-thanks {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+
+  #main-area.col-md-8.col-lg-9 h1 {
+    margin-bottom: 25px;
+    color: #DE7380;
+    font-size: 26px;
+  }
+}

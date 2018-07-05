@@ -1,0 +1,8 @@
+[ctrl]
+stg-lovedaddy-ctrl
+
+[web]
+stg-lovedaddy-web
+
+[all:vars]
+env=staging

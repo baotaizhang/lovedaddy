@@ -1,0 +1,20 @@
+{
+  "name": "lovedaddy",
+  "private": true,
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "bootstrap": "4",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "jscroll": "^2.4.1",
+    "lightbox2": "^2.10.0",
+    "node-gyp": "^3.6.2",
+    "popper.js": "^1.14.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:horizon-company/lovedaddy.git",
+  "author": "horizon-company",
+  "license": "MIT"
+}

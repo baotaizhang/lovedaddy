@@ -1,0 +1,154 @@
+@import 'page/define/common_colors';
+
+/* user list */
+.usrlist{
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.usrlist li{
+  width: 260px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+li.flex_items {
+   width: 260px;
+   margin-bottom: 30px;
+}
+li.empty {
+   margin:0!important;
+   padding:0!important;
+   height:0!important;
+   line-height:0!important;
+}
+.usr_photo{
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.usr_photo img{
+  width: 100%;
+}
+.name{
+  display: inline-block;
+  border-bottom: 1px solid #009646;
+  margin-bottom: 5px;
+  color: #005087;
+}
+/**女性会員の名前色変更**/
+.l_name{
+  color: $female_color;
+}
+.online_status{
+  margin-bottom: 10px;
+}
+.prof{
+  text-align: justify;
+  font-size: 14px;
+}
+@media only screen and (max-width:1280px){
+  .usrlist li,
+  li.flex_items{
+    width: 240px;
+  }
+  .usr_photo{
+    height: 240px;
+  }
+}
+@media only screen and (max-width:1170px){
+  .usrlist li,
+  li.flex_items{
+    width: 220px;
+  }
+  .usr_photo{
+    height: 220px;
+  }
+}
+@media only screen and (max-width:880px){
+  .usrlist li,
+  li.flex_items{
+    width: 200px;
+  }
+  .usr_photo{
+    height: 200px;
+  }
+}
+@media only screen and (max-width:767px){
+  .usrlist li,
+  li.flex_items{
+    width: 175px;
+  }
+  .usr_photo{
+    height: 175px;
+  }
+  .infolist,
+  .name,
+  .age_place,
+  .online_status{
+    font-size: 14px;
+  }
+  .prof{
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width:640px){
+  .usrlist li,
+  li.flex_items{
+    width: 240px;
+  }
+  .usr_photo{
+    height: 240px;
+  }
+}
+@media only screen and (max-width:579px){
+  .usrlist li,
+  li.flex_items{
+    width: 220px;
+  }
+  .usr_photo{
+    height: 220px;
+  }
+}
+@media only screen and (max-width:535px){
+  .usrlist li,
+  li.flex_items{
+    width: 200px;
+  }
+  .usr_photo{
+    height: 200px;
+  }
+  #go_search input[type=submit]{
+    min-width: 150px;
+  }
+}
+@media only screen and (max-width:479px){
+  .usrlist li,
+  li.flex_items{
+    width: 175px;
+  }
+  .usr_photo{
+    height: 175px;
+  }
+}
+@media only screen and (max-width:445px){
+  .usrlist li,
+  li.flex_items{
+    width: 165px;
+  }
+  .usr_photo{
+    height: 165px;
+  }
+}
+@media only screen and (max-width:414px){
+  .usrlist li,
+  li.flex_items{
+    width: 150px;
+  }
+  .usr_photo{
+    height: 150px;
+  }
+}
+

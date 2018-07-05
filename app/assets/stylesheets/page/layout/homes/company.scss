@@ -1,0 +1,13 @@
+body#homes-company {
+  @import 'page/base_layout/common';
+
+  /*==================================*/
+  /* table                            */
+  /*==================================*/
+  #company-box .table-base th {
+    width: 16%;
+  }
+
+  @import 'page/base_layout/base_responsive';
+}
+

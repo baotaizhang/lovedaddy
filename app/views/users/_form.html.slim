@@ -1,0 +1,13 @@
+= form_for @user do |f|
+  == render 'shared/valid_msg', object: @user
+  .form-area
+    = f.label :email
+    = f.email_field :email, id: 'email', placeholder: 'example@love-daddy.jp', type: 'email'
+  .align-center
+    button.form-btn type='submit'
+      | 登録する
+  ul.registered-area
+    li
+      = link_to '登録済の方はこちら', login_path
+    li
+      = link_to '「本登録・メール確認案内」のメール再送信はこちら', new_activation_mail_users_path

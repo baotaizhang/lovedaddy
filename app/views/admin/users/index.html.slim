@@ -1,0 +1,24 @@
+h1 ユーザー一覧
+
+table
+  thead
+    tr
+      th id
+      th ニックネーム
+      th email
+      th 状態
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.id
+        td = link_to user.nickname, user, target: '_blank'
+        td = user.email
+        td
+          - if user.deleted_at?
+            = '退会済'
+        td
+          - unless user.deleted_at?
+            = link_to '退会', admin_user_path(id: user.id), method: :delete, data: {confirm: "#{user.nickname}を本当に退会させますか？"}
+

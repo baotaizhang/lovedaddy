@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      user_report: 通報
+    attributes:
+      user_report:
+        report_user: 報告者
+        target_user: 通報対象者
+        reason: 理由
+        detail_text: 内容の詳細
+

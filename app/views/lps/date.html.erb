@@ -1,0 +1,256 @@
+<div id="top"></div>
+<!--ヘッダー-->
+<header><div id="header">
+<div id="header_in">
+<h1><%= image_tag "lp/date/catch.jpg", alt: "出会いが未来を変える", class: "pc" %><%= image_tag "lp/date/catch_smp.jpg", alt: "出会いが未来を変える", class: "smp" %></h1>
+<div id="head_form">
+<%= form_for @user do |f| %>
+  <input placeholder="メールアドレスを入力してください" name="user[email]" type="email">
+  <div class="form_btn">
+  <button type="submit" class="opa"><%= image_tag "lp/date/form_btn.png", class: "pc" %><%= image_tag "lp/date/form_btn_smp.png", class: "smp" %></button>
+  </div><!--form_btn-->
+<% end %>
+</div><!--head_form-->
+<span class="ico"><%= image_tag "lp/date/catch_ico.png" %></span>
+</div><!--header_in-->
+</div></header>
+<!--ヘッダー-->
+
+
+
+<!--コンテンツ-->
+<div id="content">
+<!--フォーム-->
+<section class="form">
+<%= image_tag "lp/date/form.png", class: "pc" %>
+<div class="form_in">
+<%= form_for @user do |f| %>
+  <input placeholder="メールアドレスを入力してください" name="user[email]" type="email">
+  <div class="form_btn">
+  <button type="submit" class="opa"><%= image_tag "lp/date/form_btn.png", class: "pc" %><%= image_tag "lp/date/form_btn_smp.png", class: "smp" %></button>
+  </div><!--form_btn-->
+<% end %>
+</div><!--form_in-->
+</section>
+<!--フォーム-->
+
+
+
+<section id="sec001">
+<h2>何人もの女性が<br class="smp">素敵なパパを見つけています</h2>
+<div class="maincontent">
+<dl>
+<dt><%= image_tag "lp/date/img001.jpg" %></dt>
+<dd>
+<h3>「パパ活」に出会って</h3>
+<p>正直のところ、1年前までお金にすごく困っていました。<br>
+お金が無くて、色々なバイトなどを探しましたが、<br class="pc">それだけでは到底賄える金額ではありませんでした。<br>
+パパ活に出会ってからは、良いパパと出会い、相談に乗ってもらったり、<br class="pc">資金面で援助していただき、苦しい状況から脱することができました。<br>
+今、パパ活に出会えていなかったら、今のように生活を送ることは非常に難しかったと思います。<br>
+最初は、こういったサイトに登録したことがなかったので、躊躇しましたが、<br class="pc">「パパ活」をしていなかったら、今はどうなっていかと思うと、心配になるほどです。</p>
+</dd>
+</dl>
+</div><!--maincontent-->
+</section>
+
+
+
+<section id="sec002">
+<h2>多くの女性が登録する理由</h2>
+<div class="maincontent">
+<ul>
+<li><span><%= image_tag "lp/date/list01.png" %></span>プライバシー保護<br>退会後の情報は一切保持しない</li>
+<li><span><%= image_tag "lp/date/list02.png" %></span>高年収、職業が企業オーナー、経営者、<br class="pc">医師などの士業の方が登録をしている</li>
+<li><span><%= image_tag "lp/date/list03.png" %></span>お小遣いを多く貰った<br class="smp">事例がたくさん</li>
+</ul>
+</div><!--maincontent-->
+</section>
+
+
+
+<!--フォーム-->
+<section class="form">
+<%= image_tag "lp/date/form.png", class: "pc" %>
+<div class="form_in">
+<%= form_for @user do |f| %>
+  <input placeholder="メールアドレスを入力してください" name="user[email]" type="email">
+  <div class="form_btn">
+  <button type="submit" class="opa"><%= image_tag "lp/date/form_btn.png", class: "pc" %><%= image_tag "lp/date/form_btn_smp.png", class: "smp" %></button>
+  </div><!--form_btn-->
+<% end %>
+</div><!--form_in-->
+</section>
+<!--フォーム-->
+
+
+
+<section id="sec003">
+<div class="maincontent">
+<ul>
+<li>
+<dl>
+<dt><%= image_tag "lp/date/voice001.jpg" %></dt>
+<dd>東京都<br>会社経営 25歳</dd>
+</dl>
+<p>私は、高校卒業後に、美容師として働き始めました。<br>
+働き始めて、すごく給料が安くて、労働時間が長かったので、他の道はないかなぁと考えるようになりました。<br>
+<br>
+それから色々な職業などを探していたのですが、自分に合いそうなものはなかなかありませんでした。<br>
+専業主婦になるのも嫌で、将来、自分で稼げるようになりたいと漠然と思っていました。<br>
+<br>
+「パパ活」で出会った方で、企業オーナーの方がいらして、その方に投資していただいて、今は、社長として会社を切り盛りしています。そのような方に出会えたことに非常に感謝しています。</p>
+</li>
+<li>
+<dl>
+<dt><%= image_tag "lp/date/voice002.jpg" %></dt>
+<dd>東京都<br>看護師 23歳</dd>
+</dl>
+<p>大学卒業後、看護師として働き始めましたが、将来したいと考えていた海外留学を諦められませんでした。<br>
+そう思っていたとき、「パパ活」という言葉に出会いました。<br>
+<br>
+サイトに登録してから、私は、海外で仕事をされている方とお会いしてみて、海外留学先の話であったり、各国の事情について伺うことができました。<br>
+ネット上には載っていない、聞いてみないとわからない話でした。<br>
+私自身、聞いたことのないお話ばかりで、将来への考え方が大きく変わりました。<br>
+<br>
+パパ活サイトと言われると、出会い系のようなイメージで登録に躊躇される方もいらっしゃるかと思いますが、色々な悩みを抱えている女子にとっては、非常に有意義なサイトだと思っています。</p>
+</li>
+</ul>
+</div><!--maincontent-->
+</section>
+
+
+
+<section id="sec004">
+<h2>よくあるご質問</h2>
+<div class="maincontent">
+<ul>
+<li><dl>
+<dt><span>Q.</span>パパ活で本当にお金を稼げるの？</dt>
+<dd><span>A.</span><p>メリットはとにかく、コスパが良いです。<br>
+普通に働くよりも割が良いため、皆さん、興味本位で利用され、<br class="pc">その割の良さから、定期的に、「パパ活」をされる方も多くいます。<br>
+大体、1～2hで1万円から2万円程、稼ぐことができます。</p></dd>
+</dl></li>
+<li><dl>
+<dt><span>Q.</span>なんでそんなにパパ活が流行っているのですか？</dt>
+<dd><span>A.</span><p>お金を短期間で稼げるだけでなく、やり方が簡単で、スキマ時間にできるのが、パパ活が普及した理由だと思います。<br>
+又、自分のスケジュール次第で、予定を入れることができますし、<br class="pc">いつでも始められて、いつでもやめられますのも、流行った理由として大きいでしょう。</p></dd>
+</dl></li>
+<li><dl>
+<dt><span>Q.</span>本当に将来の為になるのでしょうか？</dt>
+<dd><span>A.</span><p>会員層は、経営者が多く、人生経験を沢山積んだ方が多く登録されております。<br>
+普段では出会えないような方と会うチャンスがありますので、色々なチャンスを掴んでいかれる方も多くいます。<br>
+将来についての相談や、就職、新卒社員であれば、これほど良い相談相手はいないかと思います。</p></dd>
+</dl></li>
+<li><dl>
+<dt><span>Q.</span>パパ活をされていることを知られたくないのですが…</dt>
+<dd><span>A.</span><p>基本的に、知り合いや同僚に「パパ活」をしていることを知られたということは聞いたことがありません。<br>
+よく一般的にあるように、サイトから情報を流出させるなどがありますが、当サイトでは、<br class="pc">退会時には、データを保持することはありませんので、<br class="pc">その点では、他のサイトよりも安全度は高いと思っております。<br>
+<span class="small">※再登録防止の為、メールアドレスのみは保持します。</span></p></dd>
+</dl></li>
+<li><dl>
+<dt><span>Q.</span>どんなパパがいるのでしょうか？</dt>
+<dd><span>A.</span><p>パパ活をする男性は、30代から40代にかけての社会的にステータスがある方がほとんどです。<br>
+職業としては、経営者、医者、士業(弁護士、公認会計士)等になります。<br>
+普段出会うことができない方で、社会的な立場もありますので、<br class="pc">お互いプライバシーには干渉せずに、関係を続けていくことができます。</p></dd>
+</dl></li>
+</ul>
+</div><!--maincontent-->
+</section>
+
+
+
+<!--フォーム-->
+<section class="form">
+<%= image_tag "lp/date/form.png", class: "pc" %>
+<div class="form_in">
+<%= form_for @user do |f| %>
+  <input placeholder="メールアドレスを入力してください" name="user[email]" type="email">
+  <div class="form_btn">
+  <button type="submit" class="opa"><%= image_tag "lp/date/form_btn.png", class: "pc" %><%= image_tag "lp/date/form_btn_smp.png", class: "smp" %></button>
+  </div><!--form_btn-->
+<% end %>
+</div><!--form_in-->
+</section>
+<!--フォーム-->
+
+
+
+<section id="sec005">
+<div class="maincontent">
+<h3>「パパ活」という言葉に、<br class="smp">どのような印象を受けますでしょうか？</h3>
+<dl>
+<dt><%= image_tag "lp/date/prof.jpg" %><span>代表取締役　島崎 和久斗</span></dt>
+<dd>
+<p>皆様、<strong class="red">「パパ活」</strong>という言葉に、良い意味に受け取る方も、<br class="pc">悪い意味に受け取られる方もいられるでしょう。<br>
+しかしながら、我々がサービスを運営する上で、申し上げたいのは、<br class="pc"><strong class="red">「パパ活」</strong>を通じて、<br class="pc">将来、素晴らしい方向へ進んで行かれれる方も居ることです。<br>
+それも1人2人ではなくて、多くの人です。<br>
+<br>
+私は<strong class="red">「パパ活」</strong>を、数ヶ月体験をし、色々な女性にお会いしてきました。<br>
+その中で、<strong class="red">「パパ活」</strong>を通じて、会う度に、女性が綺麗になっていく姿、<br class="pc">奨学金に苦しんでいる女子大生がバイトに励み、<br class="pc">大学に通うことがままならない状況の中、援助を受け大学を卒業できた姿、<br class="pc">将来事業をしたいという夢を持ち、パパを見つけ、<br class="pc">経営者になった姿も見てきました。<br>
+<br>
+<strong class="red">「パパ活」</strong>というサービスが無ければ、難しかったでしょう。<br>
+我々は、現在、<strong class="under_line">困っている女性を、<br class="pc">素敵で、余裕のある女性にしていけるサービス</strong>を目指しております。</p>
+</dd>
+</dl>
+</div><!--maincontent-->
+</section>
+
+
+
+<section id="sec006">
+<div class="maincontent">
+<dl>
+<dt><%= image_tag "lp/date/gift.png" %></dt>
+<dd>
+<p>期間限定で、amazonギフト券をプレゼントしております。<br>
+また、今後、ブランドバックのプレゼントキャンペーンや<br class="pc">パーティーへの招待なども行っていきます。<br>
+只今、登録された方限定ですので、<br class="pc">この機会にお見逃しなくご登録ください。</p>
+</dd>
+</dl>
+<span class="ico"><%= image_tag "lp/date/limited.png" %></span>
+</div><!--maincontent-->
+</section>
+
+
+
+<!--フォーム-->
+<section class="form">
+<%= image_tag "lp/date/form.png", class: "pc" %>
+<div class="form_in">
+<%= form_for @user do |f| %>
+  <input placeholder="メールアドレスを入力してください" name="user[email]" type="email">
+  <div class="form_btn">
+  <button type="submit" class="opa"><%= image_tag "lp/date/form_btn.png", class: "pc" %><%= image_tag "lp/date/form_btn_smp.png", class: "smp" %></button>
+  </div><!--form_btn-->
+<% end %>
+</div><!--form_in-->
+</section>
+<!--フォーム-->
+</div><!--content-->
+<!--コンテンツ-->
+
+
+
+<!--フッター-->
+<footer><div id="footer">
+<ul class="sns">
+<li><a target="_blank" href="https://www.instagram.com/lovedaddyjp" class="opa"><%= image_tag "lp/date/insta.svg"%></a></li>
+<li><a target="_blank" href="https://twitter.com/lovedaddyjp" class="opa"><%= image_tag "lp/date/twitter.svg" %></a></li>
+<li><a target="_blank" href="https://www.facebook.com/LoveDaddy-960472650780898/" class="opa"><%= image_tag "lp/date/facebook.svg" %></a></li>
+<li><a target="_blank" href="https://line.me/R/ti/p/%40raa0005i" class="opa"><%= image_tag "lp/date/line.svg" %></a></li>
+</ul>
+<ul>
+<li><a href="/company">会社概要</a></li>
+<li><a href="/agreement">会員規約</a></li>
+<li><a href="/privacy_policy">プライバシーポリシー</a></li>
+<li><a href="/limitation">18歳以上の確認</a></li>
+<li><a href="/law">特定商取引法に基づく表記</a></li>
+<li><a href="/contacts/new">お問合わせ</a></li>
+</ul>
+<div class="copyright"><a href="https://love-daddy.jp/" class="opa"><%= image_tag "lp/date/logo.svg" %></a></div><!--copyright-->
+</div></footer>
+<!--フッター-->
+
+<% if Rails.env.production? %>
+<script> window['_fs_debug'] = false; window['_fs_host'] = 'fullstory.com'; window['_fs_org'] = 'CY23R'; window['_fs_namespace'] = 'FS'; (function(m,n,e,t,l,o,g,y){ if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;} g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[]; o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js'; y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y); g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)}; g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)}; g.consent=function(a){g("consent",!arguments.length||a)}; g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)}; g.clearUserCookie=function(){}; })(window,document,window['_fs_namespace'],'script','user'); </script>
+<% end %>

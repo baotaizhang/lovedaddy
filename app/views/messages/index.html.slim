@@ -1,0 +1,37 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/message/index'
+
+#messages-box
+  h1 メッセージ一覧
+  .container
+    - if @messages.present?
+      - @messages.each do |message|
+        - partner_user = message.partner_user(current_user).decorate
+        - if partner_user.display_deleted?(current_user)
+          = link_to '#'do
+            .messages-area
+              .row
+                .col-4.col-sm-4.col-md-3.col-lg-2
+                  = image_tag partner_user.no_image_url
+                .col-8.col-sm-8.col-md-9.col-lg-10
+                  p
+                    | このユーザーは退会しました
+        - else
+          == render 'birthday_credentials/credential_guide_link', permit: can?(:show, message), url: message_path(partner_user), link_class: "" do
+            .messages-area
+              .row
+                .col-4.col-sm-4.col-md-3.col-lg-2
+                  = image_tag partner_user.display_main_image_url
+                .col-8.col-sm-8.col-md-9.col-lg-10
+                  - if current_user?(message.to_user) && message.opened_at.blank?
+                    p.messages-unread
+                      = '未読'
+                  p.messages-name #{partner_user.nickname}
+                  p.messages-age #{partner_user.age}歳 / #{partner_user.residence.name}
+                  p.messages-date #{message.post_datetime}
+                  br
+                  p.messages-status #{partner_user.last_login_status}
+                  p.messages-caption #{message.content&.truncate(30)}
+    - else
+      p
+        | メッセージはまだありません

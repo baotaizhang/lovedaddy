@@ -1,0 +1,54 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/users/index'
+- content_for :page_javascript do
+  = javascript_include_tag 'page/users-index'
+
+h1 会員検索
+section#search
+  = search_form_for(@q) do |f|
+    ul.CC.Flex
+      li#age_select
+        cite 年齢
+        .selectbox
+          = f.select :birthday_lteq, (18..80).map{|age| ["#{age}歳", age.years.ago.to_date]}, include_blank: '指定なし'
+        span.split 〜
+        .selectbox
+          = f.select :birthday_gteq, (18..80).map{|age| ["#{age}歳", ((age + 1).years.ago + 1.day).to_date]}, include_blank: '指定なし'
+      li#place_select
+        cite 居住地
+        #at.selectbox.longbox
+          = f.collection_select :residence_id_eq, Prefecture.restricted_area, :id, :name, include_blank: '指定なし'
+      li#go_search
+        input type="submit" value="検索"
+        -#a.advance.sp_adBtn href="/advance.html"  詳細検索
+        -#span.advance.pop.pc_adBtn
+        -#  | 詳細検索
+section#result.CC.scroll
+  - if @users.present?
+    .scroll-area
+      ul.usrlist.Flex
+        - @users.each do |user|
+          - next if user.display_deleted?(current_user)
+          li
+            = link_to user do
+              dl
+                dt.usr_photo
+                  = image_tag user.display_main_image_url(:thumb)
+                dd.name.l_name= user.nickname
+                dd.age_place
+                  | #{user.age}歳
+                  - if user.residence_id?
+                    | ／#{user.residence.name}
+                dd.online_status
+                  = user.last_login_status
+                dd.prof
+                  = user.introduction&.truncate(26)
+      .hide-pagination
+        = paginate @users
+  - else
+      | 会員が見つかりませんでした
+
+-##advance_pop
+-#  #pop_close
+-#  iframe#pop_win(src="/")
+

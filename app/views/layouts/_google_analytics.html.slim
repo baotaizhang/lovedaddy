@@ -1,0 +1,8 @@
+- if Rails.env.production?
+  /! Global site tag (gtag.js) - Google Analytics
+  script async="" src="https://www.googletagmanager.com/gtag/js?id=#{Settings.analytics.google.tracking_id}"
+  javascript:
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '#{Settings.analytics.google.tracking_id}');

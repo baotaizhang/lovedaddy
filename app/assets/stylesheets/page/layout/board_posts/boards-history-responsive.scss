@@ -1,0 +1,18 @@
+@media (max-width:580px) {
+  #boards-box .boards-ttl {
+    font-size: 15px;
+  }
+  #boards-box .boards-txt {
+    font-size: 14px;
+  }
+  #boards-box .boards-btn-delete a {
+    margin-top: 8px;
+  }
+  #boards-box .boards-posted {
+    font-size: 11px;
+  }
+  #boards-box .boards-area:last-child {
+    margin-bottom: 0;
+  }
+}
+

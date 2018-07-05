@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      profile_image: プロフィール画像
+    attributes:
+      profile_image:
+        user: ユーザー
+        photo: 画像
+        status: 公開範囲
+  enumerize:
+    profile_image:
+      status:
+        open: 全員に公開
+        viewable_user: 許可した人にだけ公開
+

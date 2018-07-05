@@ -1,0 +1,7 @@
+h1 未承認の年齢証明一覧
+
+- @birthday_credentials_waiting.each do |bc|
+  p = "ニックネーム: #{bc.user.nickname}"
+  p = "年齢証明のステータス: #{bc.status}"
+  p = "提出日: #{bc.created_at}"
+  p = link_to "承認はこちら", edit_admin_birthday_credential_path(bc)

@@ -1,0 +1,9 @@
+- if defined?(user) && !current_user?(user)
+  .add_viewable
+    p.release-btn
+      - if current_user.image_viewable_users.pluck(:id).include?(user.id)
+        = link_to image_viewable_user_path(user, 'image_viewable_user[viewing_user_id]' => user.id), method: :delete do
+          span 画像閲覧許可を解除
+      - else
+        = link_to image_viewable_users_path(user, 'image_viewable_user[viewing_user_id]' => user.id), method: :post do
+          span プロフィール画像の閲覧を許可

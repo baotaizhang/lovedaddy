@@ -1,0 +1,477 @@
+@media (max-width:1199px) {
+  main #warranty-box .price-box-caption {
+    width: 65%;
+    padding: 20px;
+  }
+  main #warranty-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+    background: image-url('homes-pricing/ico-money.svg') no-repeat;
+    top: 37px;
+    right: 129px;
+  }
+  main #service-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+    background: image-url('homes-pricing/ico-service.svg') no-repeat;
+    top: 33px;
+    right: 120px;
+    z-index: -1;
+  }
+  main #party-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: 8px;
+    z-index: -1;
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background: image-url('homes-pricing/ico-wine.svg') no-repeat;
+    background-size: 66px;
+  }
+}
+
+@media (max-width:991px) {
+  main h2 {
+    font-size: 28px;
+  }
+  main .sub-ttl {
+    font-size: 19px;
+  }
+  main #service-box .price-box-caption {
+    width: 68%;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 50%;
+    padding: 22px;
+    background: #fff;
+    transform: translate(0%, -50%);
+    border: solid 1px #ededed;
+  }
+  main #service-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 12px;
+    right: 155px;
+    z-index: -1;
+    width: 52px;
+    background: image-url('homes-pricing/ico-service.svg') no-repeat;
+  }
+  main #warranty-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 42px;
+    background: image-url('homes-pricing/ico-money.svg') no-repeat;
+    top: 46px;
+    right: 72px;
+    background-size: 42px;
+  }
+  main #warranty-box .list-warranty {
+    width: 100%;
+  }
+  main #warranty-box .list-warranty {
+    margin: 50px auto 85px;
+  }
+  main #party-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 17px;
+    right: 23px;
+    z-index: -1;
+    width: 52px;
+    background: image-url('homes-pricing/ico-wine.svg') no-repeat;
+    background-size: 52px;
+  }
+  main #warranty-box .price-box-caption {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 50%;
+    width: 68%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translate(0%, -50%);
+    border: solid 1px #ededed;
+    text-align: justify;
+  }
+  main #warranty-box h2 {
+    padding-bottom: 20px;
+  }
+  main #party-box .price-box-caption {
+    width: 68%;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 50%;
+    padding: 22px;
+    background: #fff;
+    transform: translate(0%, -50%);
+    border: solid 1px #ededed;
+  }
+}
+
+/*==================================
+common
+==================================*/
+@media (max-width:848px) {
+  main #main-title {
+    margin-bottom: 50px;
+    text-align: left;
+    padding: 25px 20px;
+    width: 83%;
+    background: #c8141e;
+    box-shadow: 53px 20px 0 #E9E9E9;
+    text-transform: capitalize;
+  }
+  main #main-title h1 {
+    color: #ffffff;
+    font-size: 24px;
+  }
+  main #main-title h1 span {
+    display: block;
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  main h1 {
+    font-size: 20px;
+  }
+  main h2 {
+    font-size: 20px;
+  }
+  main h2, main h3 {
+    margin-bottom: 18px;
+    font-size: 25px;
+  }
+  main h4 {
+    font-size: 16px;
+  }
+  main .content-bg {
+    padding: 65px 0;
+    background: #f5f5f5;
+  }
+  main #price-box, main #service-box {
+    margin-bottom: 65px;
+  }
+  /*==================================
+  table
+  ==================================*/
+  main .table-base th, main .table-base td {
+    display: block;
+    width: 100%;
+  }
+  main .table-base td {
+    display: block;
+    width: 100%;
+    border-left: solid 1px #e0e0e0;
+  }
+  main .table-base tr:first-child td {
+    border-top: none;
+  }
+  /*==================================
+  price
+  ==================================*/
+  main .price-area .table-base {
+    table-layout: fixed;
+  }
+  main.price-area .table-base th, main .price-area .table-base td {
+    display: table-cell;
+  }
+  main .price-area .table-base td {
+    border-right: solid 1px #ccc;
+  }
+  main .price-area tr:not(:first-child) td:first-child {
+  }
+  /*==================================
+  service
+  ==================================*/
+  main #service-box .price-img {
+    float: inherit;
+    width: 100%;
+  }
+  main #service-box .price-box-caption {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    right: inherit;
+    top: inherit;
+    padding: 25px;
+    background: #fff;
+    transform: inherit;
+    border: solid 1px #ededed;
+  }
+  main #service-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 65px;
+    display: inline-block;
+    background: image-url('homes-pricing/ico-service.svg') no-repeat;
+    top: 8px;
+    right: 20px;
+    z-index: -1;
+  }
+  main #service-box .price-img img {
+    vertical-align: bottom;
+  }
+  /*==================================
+  common
+  ==================================*/
+  main .price-box-caption:last-child {
+    margin-bottom: 0;
+  }
+  main .price-box-inner {
+    position: inherit;
+  }
+  main .price-box-inner:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  main .price-box-caption p:last-child {
+    margin-bottom: 0;
+  }
+  /*==================================
+  warranty
+  ==================================*/
+  main #warranty-box h2 {
+    padding-bottom: 0;
+  }
+  main #warranty-box .price-box-caption {
+    position: relative;
+    left: inherit;
+    top: inherit;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    transform: inherit;
+    border: solid 1px #ededed;
+    text-align: justify;
+  }
+  main #warranty-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    display: inline-block;
+    background: image-url('homes-pricing/ico-money.svg') no-repeat;
+    top: 10px;
+    right: 22px;
+  }
+  main #warranty-box .price-img {
+    float: inherit;
+    width: 100%;
+  }
+  main .sub-ttl {
+    font-size: 20px;
+  }
+  main #warranty-box .list-warranty {
+    width: 100%;
+    margin: 20px auto 65px;
+    padding: 20px;
+    background: #f7f7f7;
+  }
+  main #warranty-box .list-warranty p {
+    position: relative;
+  }
+  main #warranty-box .list-warranty p:before {
+    content: " ";
+    position: absolute;
+    top: 3px;
+    left: -20px;
+    display: block;
+    width: 4px;
+    height: 22px;
+    background: #c8141e;
+  }
+  main #warranty-box .list-warranty ol {
+    counter-reset: number;
+    list-style-type: none;
+    padding: .5em .2em .5em .8em;
+  }
+  main #warranty-box .list-warranty ol li {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 0;
+    line-height: 1.5;
+    padding: 10px 20px 10px 35px;
+  }
+  main #warranty-box .list-warranty ol li:before {
+    position: absolute;
+    counter-increment: number;
+    content: counter(number);
+    display: inline-block;
+    border: solid 1px #c81620;
+    color: #c81620;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 50%;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+  }
+  /*==================================
+  party
+  ==================================*/
+  main #party-box, main #point-box {
+    margin-bottom: 65px;
+  }
+  main #party-box .price-img {
+    float: inherit;
+    width: 100%;
+  }
+  main #party-box .price-box-caption {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    right: 0;
+    top: inherit;
+    padding: 25px;
+    background: #fff;
+    transform: inherit;
+    border: solid 1px #ededed;
+  }
+  main #party-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 23px;
+    z-index: -1;
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background: image-url('homes-pricing/ico-wine.svg') no-repeat;
+    background-size: 66px;
+  }
+  /*==================================
+  company
+  ==================================*/
+  main #company-box .table-base th {
+    width: 100%;
+  }
+  /*==================================
+  footer-page
+  ==================================*/
+  main #table-list-box .item-area {
+    margin-bottom: 45px;
+  }
+  main #table-layout .table-base th {
+    padding: 20px 0 10px 0;
+    border-bottom: none;
+    font-size: 13px;
+  }
+  main #table-layout .table-base td {
+    display: block;
+    width: 100%;
+    padding: 0 0 20px 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  main #table-layout .table-base tr:last-child td {
+    border-bottom: solid 1px #c8141e;
+  }
+  main #table-list-box .main-caption {
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+}
+
+/*---848px -end---*/
+/*==================================
+table
+==================================*/
+@media (max-width:768px) {
+  main #point-box .price-box-inner {
+    width: 100%;
+  }
+  main .table-base th, main .table-base td {
+    display: block;
+    width: 100%;
+  }
+  main select {
+    border: 0;
+    outline: none;
+    outline-offset: none;
+    border-radius: 0px;
+  }
+}
+
+/*---768px -end---*/
+@media (max-width:767px) {
+  main #price-box .table-base {
+    overflow-y: auto;
+    white-space: nowrap;
+    display: block;
+    width: auto;
+  }
+  main #price-box .table-base tbody {
+    width: 100%;
+    display: table;
+  }
+  main #price-box .table-base::-webkit-scrollbar {
+    height: 6px;
+  }
+  main #price-box .table-base::-webkit-scrollbar-track {
+    background: #F1F1F1;
+  }
+  main #price-box .table-base::-webkit-scrollbar-thumb {
+    background: #BCBCBC;
+  }
+}
+
+@media (max-width:580px) {
+  main {
+    font-size: 14px;
+  }
+  main .sub-ttl {
+    font-size: 18px;
+  }
+  main #main-area {
+    padding: 20px 15px;
+    border-left: solid 5px #e1898f;
+    background: #fdfdfd;
+  }
+  main #form-box .main-caption {
+    text-align: left;
+  }
+}
+
+@media (max-width:490px) {
+  #main party-box .price-box-caption:after, main #service-box .price-box-caption:after, main #warranty-box .price-box-caption:after {
+    content: "";
+    display: none;
+  }
+  /*--file-btn-----------*/
+  main .file-area-inner span {
+    display: block;
+    margin: 0 0 10px 0
+  }
+  main .file-btn {
+    width: 100%;
+  }
+  main .file-area-inner span + label + span {
+    display: block;
+    margin: 8px 0 0 0;
+  }
+  .file-area {
+    text-align: center;
+  }
+}

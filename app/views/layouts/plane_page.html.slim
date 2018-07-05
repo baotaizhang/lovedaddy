@@ -1,0 +1,10 @@
+doctype html
+html lang="ja"
+  head
+    == render 'layouts/common_head'
+  body id="#{controller_name}-#{action_name}"
+    main
+      == render 'layouts/message', flash: flash
+      == yield
+    == yield(:page_javascript) if content_for?(:page_javascript)
+

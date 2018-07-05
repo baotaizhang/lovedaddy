@@ -1,0 +1,21 @@
+以下の通報を受けました。
+
+■通報された人
+<%= @user_report.target_user.nickname %>
+<%= user_url(@user_report.target_user) %>
+
+■通報した人
+<%= @user_report.report_user.nickname %>
+<%= user_url(@user_report.report_user) %>
+
+■通報理由
+<%= @user_report.reason.title %>
+
+■詳細
+<%= @user_report.detail_text %>
+
+■通報日時
+<%= @user_report.created_at %>
+
+ご対応よろしくお願いいたします。
+

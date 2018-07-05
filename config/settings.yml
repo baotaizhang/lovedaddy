@@ -1,0 +1,32 @@
+online_sec: 600 # 「オンライン」と表示する秒数
+
+options:
+  hide_online:
+    display_past_days: 3
+
+website:
+  domain: https://love-daddy.jp
+
+company:
+  mail: info@horizon-c.co.jp
+  support_mail: support@horizon-c.co.jp
+  ses_mail: 'LoveDaddy <info@love-daddy.jp>'
+
+sns:
+  facebook:
+    id: LoveDaddy-960472650780898
+    url: https://www.facebook.com/LoveDaddy-960472650780898/
+  instagram:
+    id: lovedaddyjp
+    url: https://www.instagram.com/lovedaddyjp
+  twitter:
+    id: lovedaddyjp
+    url: https://twitter.com/lovedaddyjp
+  line:
+    url: https://line.me/R/ti/p/%40raa0005i
+
+activation_token_expiration_period: 24 # 時間
+
+analytics:
+  google:
+    tracking_id: UA-119535775-1

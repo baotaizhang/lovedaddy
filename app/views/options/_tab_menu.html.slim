@@ -1,0 +1,21 @@
+ul.tab-menu
+  li
+    = link_to '利用機能', options_path, class: "nav-link#{' active' if active == :option}"
+  / 証明書が全て提出済みであれば、「設定画面」にある証明書のタブは必要ない。
+  - if current_user.sex.male?
+    - if not current_user.birthday_credentials.with_status(:approved).present? or not current_user.income_credential_approved?
+      li
+        = link_to '証明書', birthday_credentials_path, class: "nav-link#{' active' if active == :credential}"
+  - elsif current_user.sex.female?
+    - if not current_user.birthday_credentials.with_status(:approved).present?
+      li
+        = link_to '証明書', birthday_credentials_path, class: "nav-link#{' active' if active == :credential}"
+  li
+    = link_to '画像閲覧許可', image_viewable_users_path, class: "nav-link#{' active' if active == :image_viewable_users}"
+  - if can? :index, BlockUser
+    li
+      = link_to 'ブロック', block_users_path, class: "nav-link#{' active' if active == :block}"
+  - if can? :index, DisplayUnsubscribeUser
+    li
+      = link_to '特定非表示', display_unsubscribe_users_path, class: "nav-link#{' active' if active == :display_unsubscribe}"
+

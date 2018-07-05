@@ -1,0 +1,2 @@
+class BirthdayCredentialUploader < ImageUploader
+end

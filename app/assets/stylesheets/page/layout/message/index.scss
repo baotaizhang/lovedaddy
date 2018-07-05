@@ -1,0 +1,79 @@
+body#messages-index {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+  
+  #messages-box h1 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #005087;
+    text-align: center;
+  }
+  #messages-box a {
+    border-bottom: solid 1px #e0e0e0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  #messages-box a:first-child {
+    border-top: solid 1px #e0e0e0;
+  }
+  #messages-box p {
+    margin-bottom: 0;
+  }
+  #boards-box .boards-posted {
+    padding-top: 1px;
+    font-size: 12px;
+  }
+  #messages-box .messages-name {
+    margin-right: 15px;
+    float: left;
+  }
+  #messages-box .messages-date {
+    float: left;
+    clear: left;
+    margin: 8px 9px 0 0;
+    font-size: 13px;
+    color: #a9a9a9;
+  }
+  #messages-box .messages-posted {
+    margin: 8px 9px 0 0;
+    float: left;
+    color: #a9a9a9;
+  }
+  .messages-date, .messages-posted {
+    font-size: 13px;
+  }
+  #messages-box .messages-age {
+    font-size: 14px;
+    padding-top: 1px;
+  }
+  #messages-box .messages-status {
+    margin: 10px 9px 0 0;
+    font-size: 13px;
+    color: #a9a9a9;
+  }
+  #messages-box a {
+    display: block;
+    color: #2a2a2a;
+  }
+  #messages-box .messages-area {
+    position: relative;
+  }
+  #messages-box .messages-unread {
+    position: absolute;
+    top: -20px;
+    right: 16px;
+    background: #015087;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 0px 0px 0px 5px;
+  }
+  #messages-box .messages-caption {
+    margin-top: 8px;
+    color: #015087;
+    font-size: 17px;
+  }
+
+  @import 'page/layout/message/responsive';
+}

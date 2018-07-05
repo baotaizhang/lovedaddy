@@ -1,0 +1,7 @@
+#flash-messages
+  - flash.each do |type, msg|
+    .animated.fadeInUp.message.alert(class='#{bootstrap_class_for(type)}')
+      span.alert-text = msg
+      button.close(type="button" data-dismiss="alert")
+        span(aria-hidden="true") &times;
+        span.sr-only close

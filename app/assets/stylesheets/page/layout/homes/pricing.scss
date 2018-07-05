@@ -1,0 +1,283 @@
+body#homes-pricing {
+  @import 'page/base_layout/common';
+
+
+  /*==================================
+  /*表
+  /*==================================*/
+  .price-area .table-base th {
+    width: 20%;
+    text-align: center;
+    border-right: solid 1px #e0e0e0;
+  }
+  .price-area .table-base td {
+    border-right: solid 1px #e0e0e0;
+    text-align: center;
+  }
+  .price-area tr:first-child th {
+    border-left: solid 1px #e0e0e0;
+  }
+  .price-area tr:first-child th:nth-of-type(1) {
+    border-top: solid 6px #b7b7b7;
+    text-align: left;
+  }
+  .price-area tr:first-child th:nth-of-type(2) {
+    color: #8c8c8c;
+  }
+  .price-area tr:first-child th:nth-of-type(2) {
+    border-top: solid 6px #8c8c8c;
+  }
+  .price-area tr:first-child th:nth-of-type(2):before {
+    content: "";
+    position: relative;
+    top: 6px;
+    display: inline-block;
+    height: 30px;
+    padding-left: 29px;
+    color: #848484;
+    background: image-url('homes-pricing/ico-rank01.svg') no-repeat 0 0;
+    background-size: 23px;
+  }
+  .price-area tr:first-child th:nth-of-type(3) {
+    color: #b79906;
+    border-top: solid 6px #b79906;
+  }
+  .price-area tr:first-child th:nth-of-type(3):before {
+    content: "";
+    position: relative;
+    top: 6px;
+    display: inline-block;
+    height: 30px;
+    padding-left: 29px;
+    color: #848484;
+    background: image-url('homes-pricing/ico-rank02.svg') no-repeat 0 0;
+    background-size: 23px;
+  }
+  .price-area tr:first-child th:nth-of-type(4) {
+    color: #777777;
+    border-top: solid 6px #777777;
+  }
+  .price-area tr:first-child th:nth-of-type(4):before {
+    content: "";
+    position: relative;
+    top: 6px;
+    display: inline-block;
+    height: 30px;
+    padding-left: 29px;
+    color: #848484;
+    background: image-url('homes-pricing/ico-rank03.svg') no-repeat 0 0;
+    background-size: 23px;
+  }
+  .price-area tr:first-child th:nth-of-type(5) {
+    color: #000;
+    border-top: solid 6px #000;
+  }
+  .price-area tr:first-child th:nth-of-type(5):before {
+    content: "";
+    position: relative;
+    top: 6px;
+    display: inline-block;
+    height: 30px;
+    padding-left: 29px;
+    color: #848484;
+    background: image-url('homes-pricing/ico-rank04.svg') no-repeat 0 0;
+    background-size: 23px;
+  }
+  .price-area tr:not(:first-child) td:first-child {
+    background: #f5f5f5;
+    text-align: left;
+    border-left: solid 1px #e0e0e0;
+  }
+  #price-box:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  #price-box, #service-box {
+    margin-bottom: 85px;
+  }
+  /*==================================
+  /*point
+  /*==================================*/
+  #point-box {
+    margin-bottom: 85px;
+  }
+  #point-box .price-box-inner {
+    width: 80%;
+  }
+  #point-box .table-base td span {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  /*==================================
+  /*service
+  /*==================================*/
+  #service-box .price-img {
+    float: left;
+    width: 48%;
+  }
+  #service-box .price-box-caption {
+    width: 55%;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 50%;
+    padding: 55px;
+    background: #fff;
+    transform: translate(0%, -50%);
+    border: solid 1px #ededed;
+  }
+  #service-box .price-box-caption:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 33px;
+    right: 217px;
+    z-index: -1;
+    width: 65px;
+    height: 65px;
+    background: image-url('homes-pricing/ico-service.svg') no-repeat;
+  }
+  #service-box .price-img img {
+    vertical-align: bottom;
+  }
+  /*==================================
+  /*common
+  /*==================================*/
+  .price-box-caption:last-child {
+    margin-bottom: 0;
+  }
+  .price-box-inner {
+    position: relative;
+  }
+  .price-box-inner:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .price-box-caption p:last-child {
+    margin-bottom: 0;
+  }
+  /*==================================
+  /*warranty
+  /*==================================*/
+  #warranty-box .price-box-caption {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 50%;
+    width: 55%;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translate(0%, -50%);
+    border: solid 1px #ededed;
+    text-align: justify;
+  }
+  #warranty-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+    background: image-url('homes-pricing/ico-money.svg') no-repeat;
+    top: 63px;
+    right: 108px;
+  }
+  #warranty-box .price-img {
+    float: right;
+    width: 48%;
+  }
+  .sub-ttl {
+    font-size: 22px;
+  }
+  #warranty-box .list-warranty {
+    width: 85%;
+    margin: 20px auto 85px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-bottom: solid 1px #c8151f;
+  }
+  #warranty-box .list-warranty p {
+    position: relative;
+  }
+  #warranty-box .list-warranty p:before {
+    content: " ";
+    position: absolute;
+    top: 3px;
+    left: -20px;
+    display: block;
+    width: 4px;
+    height: 22px;
+    background: #c8141e;
+  }
+  #warranty-box .list-warranty ol {
+    counter-reset: number;
+    list-style-type: none;
+    padding: .5em .2em .5em .8em;
+  }
+  #warranty-box .list-warranty ol li {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 0;
+    line-height: 1.5;
+    padding: 10px 20px 10px 35px;
+  }
+  #warranty-box .list-warranty ol li:before {
+    position: absolute;
+    counter-increment: number;
+    content: counter(number);
+    display: inline-block;
+    border: solid 1px #c81620;
+    color: #c81620;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 50%;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+  }
+  /*==================================
+  /*party
+  /*==================================*/
+  #party-box {
+    margin-bottom: 85px;
+  }
+  #party-box .price-img {
+    float: left;
+    width: 48%;
+  }
+  #party-box .price-box-caption {
+    width: 55%;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 50%;
+    padding: 55px;
+    background: #fff;
+    transform: translate(0%, -50%);
+    border: solid 1px #ededed;
+  }
+  #party-box .price-box-caption:after {
+    content: "";
+    position: absolute;
+    top: 34px;
+    right: 38px;
+    z-index: -1;
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background: image-url('homes-pricing/ico-wine.svg') no-repeat;
+    background-size: 66px;
+  }
+
+  @import 'page/base_layout/base_responsive';
+}
+

@@ -1,0 +1,19 @@
+- prev_message = nil
+- messages.each do |message|
+  - if prev_message.present? && prev_message.created_at.to_date != message.created_at.to_date
+    = message.post_date_tag
+  - prev_message = message
+
+  div class="#{(current_user?(message.to_user) ? 'return' : 'send')} #{current_user.sex.male? ? 'male' : 'female'}"
+    .id-data
+      = message.id
+    - if current_user?(message.from_user)
+      span.read
+        = '既読' if last_read_id.present? && message.id <= last_read_id
+    time.sendTime= message.post_time
+    - if message.image?
+      = link_to message.image_url, data: {lightbox: 'message-image'}
+        = image_tag (message.image.thumb.present? ? message.image.thumb.url : message.image.url)
+    - else
+      = simple_format message.content
+

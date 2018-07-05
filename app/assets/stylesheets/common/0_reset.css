@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+html {
+	overflow-y: scroll;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size:inherit;
+	font:100%;
+}
+
+img {
+	margin: 0;
+	padding: 0;
+	border: none;
+	line-height: 0;
+	vertical-align: bottom;
+}
+
+
+ul li {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	font-size: 16px;
+	*font-size:small;
+    *font:x-small;
+    font-family:"Noto Sans Japanese","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Helvetica Neue",Arial,"Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",sans-serif;
+    line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  color:#2a2a2a;
+	font-weight: 200;
+ }
+address, cite, em {
+	font-style: normal;
+}
+
+a{
+	text-decoration: none;
+	color:#2a2a2a;
+}

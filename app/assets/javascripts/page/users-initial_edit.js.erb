@@ -1,0 +1,23 @@
+$(document).ready(function() {
+  function formUpdateBySex(){
+    if ($('[id=sex-female]').prop('checked')) {
+      $('.sex-input').fadeOut('300');
+      $('.sex-input-female, .sex-input-common').fadeIn('300');
+    } else if ($('[id=sex-male]').prop('checked')) {
+      $('.sex-input').fadeOut('300');
+      $('.sex-input-male, .sex-input-common').fadeIn('300');
+    }
+  }
+
+  $('[name="user[sex]"]:radio').change(function () {
+    formUpdateBySex();
+  });
+  formUpdateBySex();
+
+  // 空白・全角をトリム
+  $('#user_nickname').focusout(function(){
+      $(this)[0].value = $.trim($(this)[0].value);
+      $(this)[0].value = $(this)[0].value.replace(/\s+/g, "");
+  });
+});
+

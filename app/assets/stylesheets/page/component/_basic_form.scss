@@ -1,0 +1,41 @@
+form.basic-form {
+  // components
+  .required-label {
+    margin-right: 5px;
+    &:after {
+      content: '必須';
+      margin-left: 5px;
+      line-height: 1em;
+      font-size: 0.7em;
+      padding: 2px 4px;
+      color: #ffffff;
+      background-color: #cc3333;
+      border-radius: 10%;
+    }
+  }
+
+  .title-label {
+    font-weight: 700;
+  }
+
+  .description {
+    font-size: 0.8em;
+    color: #888888;
+  }
+
+  // layouts
+  .row, .form-froup {
+    margin-bottom: 10px;
+  }
+
+  .form-check-inline {
+    label {
+      margin-right: 8px;
+    }
+  }
+
+  [type=submit] {
+    margin-top: 30px;
+    padding: 5px 30px;
+  }
+}

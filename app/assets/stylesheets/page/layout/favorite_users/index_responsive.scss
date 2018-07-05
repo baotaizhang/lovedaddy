@@ -1,0 +1,27 @@
+@media (max-width:580px) {
+  .usr-btn-area ul li {
+    font-size: 13px;
+  }
+  .usr-btn-area ul li a {
+    padding: 7px;
+  }
+  .favorite-name {
+    font-size: 15px;
+  }
+  .favorite-age {
+    padding-top: 2px;
+  }
+  .favorite-age {
+    font-size: 13px;
+  }
+  .favorite-status {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #a9a9a9;
+    clear: left;
+  }
+  .favorite-remove a {
+    margin-top: 9px;
+    padding: 4px 6px;
+  }
+}

@@ -1,0 +1,16 @@
+// gem
+//= require cocoon
+
+$(document).ready(function() {
+  $('#profile_image_form').on('cocoon:before-insert', function(event, insertedItem) {
+    if($('#profile_image_form .nested-fields').filter(':visible').length >= <%= ProfileImage::MAX_NUM %>){
+      alert("設定可能なプロフィール画像は<%= ProfileImage::MAX_NUM %>枚までです。");
+      event.preventDefault();
+    }
+  });
+
+  $('[type=submit]').on('click', function(event) {
+    $('#loading-modal').show();
+  });
+});
+

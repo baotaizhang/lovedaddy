@@ -1,0 +1,8 @@
+- hosts: web
+  remote_user: deploy
+  become: yes
+  vars_files:
+    - vars/{{ env }}.yml
+  roles:
+    - yum-package
+    - imagemagick

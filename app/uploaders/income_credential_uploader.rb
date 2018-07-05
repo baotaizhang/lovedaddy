@@ -1,0 +1,2 @@
+class IncomeCredentialUploader < ImageUploader
+end

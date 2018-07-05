@@ -1,0 +1,73 @@
+body#contacts-new, body#contacts-create {
+  @import 'page/base_layout/common';
+
+  /*==================================*/
+  /* table                            */
+  /*==================================*/
+  #contact-box #table-layout .table-base th:first-child {
+    color: #2a2a2a;
+  }
+  #contact-box label span {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 3px 8px;
+    background-color: #c8141e;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1;
+  }
+  #contact-box input {
+    width: 100%;
+  }
+  #contact-box input {
+    width: 50%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #f3e6e6;
+  }
+  #contact-box textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #f3e6e6;
+    font-size: 14px;
+    border: none;
+    height: 300px;
+  }
+  #contact-box #submit-area {
+    text-align: center;
+    margin: 20px 0;
+  }
+  #contact-box div input#submit {
+    width: 15%;
+    padding: 17px;
+    color: #fff;
+    background: #c8141e;
+    cursor: pointer;
+  }
+  ::-webkit-input-placeholder {
+      color:#bdbdbd;
+  }
+  :-ms-input-placeholder { 
+     color:#bdbdbd;
+  }
+  ::placeholder{ 
+   color:#bdbdbd;
+  }
+
+  /*==================================*/
+  /* responsive                       */
+  /*==================================*/
+  @import 'page/base_layout/base_responsive';
+
+  @media (max-width:848px) {
+    #contact-box #table-layout .table-base td input {
+      width: 100%;
+    }
+    #contact-box div input#submit {
+      width: 22%;
+      padding:15px 18px
+    }
+  }
+}
+

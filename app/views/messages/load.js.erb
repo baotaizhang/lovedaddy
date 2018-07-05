@@ -1,0 +1,25 @@
+<% if @messages.present? %>
+  <%# メッセージ更新 %>
+  if($('#last-message-id').val() < <%= @messages.last.id %>) {
+    <%# メッセージ描画 %>
+    $('#message').append(
+      '<%== (render "message_row", messages: @messages, last_read_id: @last_read_id).gsub(/[\r\n]/,'') %>'
+    );
+
+    <%# 最新読み込み済ID更新 %>
+    $('#last-message-id').val(
+      <%= @messages.last.id %>
+    );
+  }
+<% end %>
+
+<%# 既読更新 %>
+if($('#last-read-id').val() < <%= @last_read_id || 0 %>) {
+  $(".read:empty").each(function(){
+    $(this).text('既読');
+  });
+  $('#last-read-id').val(
+    <%= @last_read_id %>
+  )
+}
+

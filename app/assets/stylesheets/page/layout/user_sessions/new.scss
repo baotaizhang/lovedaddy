@@ -1,0 +1,12 @@
+body#user_sessions-new, body#user_sessions-create {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+
+  #form-box .pass-word {
+    margin-top: 5px;
+  }
+  #form-box .pass-word a {
+    font-size: 13px;
+    color: #000;
+  }
+}

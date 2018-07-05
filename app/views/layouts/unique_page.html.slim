@@ -1,0 +1,15 @@
+doctype html
+html lang="ja"
+  head
+    == render 'layouts/common_tag'
+    == render 'layouts/google_analytics'
+    = stylesheet_link_tag "page/unique_layout/#{controller_name}/#{action_name}"
+    == yield(:page_stylesheet) if content_for?(:page_stylesheet)
+  body id="#{controller_name}-#{action_name}"
+    == render 'layouts/message', flash: flash
+
+    == yield
+
+    = javascript_include_tag "page/#{controller_name}-#{action_name}"
+    == yield(:page_javascript) if content_for?(:page_javascript)
+

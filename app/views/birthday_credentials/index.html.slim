@@ -1,0 +1,31 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/birthday_credentials/index'
+
+.container
+  .row
+    .col-12
+      == render 'options/tab_menu', active: :credential
+      .tab-content
+        #tab02
+          h1 証明書のアップロード
+          ul
+            - if current_user.sex.male?
+              - if current_user.birthday_credentials.with_status(:approved).present?
+                li
+                  = image_tag('profile/prove01.png', alt: '本人証明', width: 110, height: 110)
+              - else
+                li
+                  = link_to_if current_user?(current_user), image_tag('profile/unprove01.png', alt: '本人証明', width: 110, height: 110), new_birthday_credential_path
+              - if current_user.income_credential_approved?
+                li
+                  = image_tag('profile/prove02.png', alt: '年収証明', width: 110, height: 110)
+              - else
+                li
+                  = link_to_if current_user?(current_user), image_tag('profile/unprove02.png', alt: '年収証明', width: 110, height: 110), new_income_credential_path
+            - elsif current_user.sex.female?
+              - if current_user.birthday_credentials.with_status(:approved).present?
+                li
+                  = image_tag('profile/l_prove01.png', alt: '本人証明', width: 110, height: 110)
+              - else
+                li
+                  = link_to_if current_user?(current_user), image_tag('profile/l_unprove01.png', alt: '本人証明', width: 110, height: 110), new_birthday_credential_path

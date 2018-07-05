@@ -1,0 +1,255 @@
+/*
+ *= require_tree ./font/
+ */
+
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; box-sizing:border-box; word-break: break-all;}
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
+ul,ol{ list-style:none;}
+html,body {
+margin:0 auto;
+padding:0;
+font-family: Lucida Grande,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ","ＭＳ Ｐゴシック",sans-serif;
+font-size:18px;
+-webkit-text-size-adjust:100%;
+text-align:left;
+color:#191919;
+min-width: 1080px;
+}
+@media screen and (max-width:640px){
+html,body{ font-size:21px; min-width:640px; max-width:640px;}
+}
+
+img { border-style:none; vertical-align:bottom; padding:0px; max-width:100%;}
+figure {margin:20px auto; text-align:center;}
+
+p{ line-height:1.75em; margin:0 0 1em; padding:0; text-align:left;}
+p:last-child{margin:0px; }
+a{ color:inherit; text-decoration:none;}
+@media print, screen and (min-width:641px){
+a:hover{}
+.opa { transition: all 0.3s ease;}
+.opa:hover { opacity: 0.6}
+}
+@media screen and (max-width:640px){
+p{ line-height:1.6em; background: image-url("lp/date/alpha.png");}
+}
+
+.left { text-align:left;}
+.right { text-align:right;}
+.center { text-align:center;}
+
+.clear { clear:both;}
+.clearfix:after{ margin:0px; padding:0px; visibility:hidden; content:"."; display:block; line-height:0; clear:both;}
+
+/*ヘッダー*/
+#header{ background: image-url("lp/date/catch_bg.jpg") center center; position: relative; z-index: 5; box-shadow:rgba(0, 0, 0, 0.66) 0 0 5px 2px;}
+#header_in{ max-width: 1080px; margin: 0 auto; position: relative;}
+#header_in span.ico{ position: absolute; right: 0; bottom:-40px; z-index: 5;}
+@media screen and (max-width:1080px){
+#header img{ max-width: 100%;}
+#header_in span.ico{ width: 24%; position: absolute; right: 0; bottom:-40px; z-index: 5;}
+}
+@media screen and (max-width:640px){
+#header{ background: none;}
+#header_in{ width: 100%;}
+#header_in span.ico{ display: none;}
+}
+#head_form{ position: absolute; left: 0; top:50%; width: 66%;}
+#head_form input[type=email]{ font-size: 28px; width: 100%;}
+#head_form .form_btn{ text-align: center; margin-top: 3%;}
+#head_form .form_btn img{ width: 80%;}
+@media screen and (max-width:640px){
+#head_form{ display: none;}
+}
+
+/*フッター*/
+#footer{ text-align: center; background: #000; color: #fff; padding: 40px 0; position: relative; z-index: 3; box-shadow:rgba(0, 0, 0, 0.66) 0 0 5px 2px;}
+#footer ul{ letter-spacing: -1em; font-size: 1px; margin-bottom: 40px;}
+#footer ul li{ display: inline-block; letter-spacing: normal; font-size: 15px; margin: 0 2em;}
+#footer ul.sns li{ margin: 0 1em;}
+#footer ul li img{ width: 60px;}
+#footer ul li a:hover{ text-decoration: underline;}
+#footer .copyright img{ width: 240px;}
+@media screen and (max-width:640px){
+#footer{ padding:20px 0;}
+#footer ul{ margin-bottom:20px;}
+#footer ul li{ font-size:15px; margin:0.5em 1em;}
+#footer ul.sns li{ margin: 0 1em;}
+#footer ul li img{ width: 60px;}
+#footer .copyright img{ width: 240px;}
+}
+
+/*メイン*/
+#content{}
+section { width:100%; background:#fff; margin:0 auto; position: relative; z-index: 3; box-shadow:rgba(0, 0, 0, 0.33) 0 0 5px 2px;}
+.maincontent { padding:0; margin:0 auto; width:1080px;}
+@media screen and (max-width:1080px){
+.maincontent { width:94%;}
+}
+@media screen and (max-width:640px){
+.maincontent { padding:0; margin:0 auto; width:600px;}
+}
+
+/*タイトル*/
+h2{ background: #c83232; font-size: 48px; line-height: 1.2em; letter-spacing: 0.1em; padding: 50px 0; margin-bottom: 40px; text-align: center; color: #fff; font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'メイリオ', Meiryo, serif; position: relative; z-index: 3; box-shadow:rgba(0, 0, 0, 0.33) 0 0 5px 2px;}
+h2:before{ content: ""; background: image-url("lp/date/tit_bar.png") center center; width: 100%; height: 10px; position: absolute; left: 0; right: 0; top: 0; margin: auto;}
+h2:after{ content: ""; background: image-url("lp/date/tit_bar.png") center center; width: 100%; height: 10px; position: absolute; left: 0; right: 0; bottom: 0; margin: auto;}
+@media screen and (max-width:640px){
+h2{ font-size:36px; line-height: 1.2em; padding:30px 15px; margin-bottom:20px;}
+h2:before{ height:6px;}
+h2:after{ height:6px;}
+}
+
+/*sec001*/
+#sec001{ background: image-url("lp/date/bg001.jpg") center center fixed; padding-bottom: 80px; color: #fff;}
+@media print, screen and (min-width:1501px){
+#sec001{ background-size:100% auto;}
+}
+#sec001 dl{ display: table; table-layout: fixed; width: 100%;}
+#sec001 dl dt{ display: table-cell; vertical-align: middle; width: 240px;}
+#sec001 dl dt img{ border-radius: 50%;}
+#sec001 dl dd{ display: table-cell; vertical-align: middle; padding-left: 40px;}
+#sec001 h3{ font-size: 28px; letter-spacing: 0.1em; margin-bottom: 10px; border-bottom: 2px solid #fff;}
+@media screen and (max-width:640px){
+#sec001{ background: image-url("lp/date/bg001.jpg") center center; background-size:auto 100%; padding-bottom:40px;}
+#sec001 dl{ display:block;}
+#sec001 dl dt{ display:block; width:100%; text-align: center; margin-bottom: 20px;}
+#sec001 dl dt img{ width: 50%;}
+#sec001 dl dd{ display:block; padding-left:0;}
+#sec001 h3{ font-size: 28px;}
+}
+
+/*sec002*/
+#sec002{ background: image-url("lp/date/bg002.jpg") center bottom no-repeat; padding-bottom: 80px;}
+#sec002 ul{ width: 780px; margin: 0;}
+#sec002 ul li{ padding: 20px 0 20px 105px; font-size: 36px; line-height: 1.2em; color: #c83232; font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'メイリオ', Meiryo, serif; position: relative; border-bottom: 8px dotted #c83232;}
+#sec002 ul li:first-child{ border-top:8px dotted #c83232;}
+#sec002 ul li span{ position: absolute; left: 20px; top: 8px;}
+@media screen and (max-width:640px){
+#sec002{ background: image-url("lp/date/bg002_smp.jpg") center bottom no-repeat; background-size:auto 84%; padding-bottom: 40px;}
+#sec002 ul{ width: 80%; margin: 0;}
+#sec002 ul li{ padding:10px 10px 10px 60px; font-size:28px; border-bottom: 4px dotted #c83232;}
+#sec002 ul li:first-child{ border-top:4px dotted #c83232;}
+#sec002 ul li span{ position: absolute; left: 10px; top: 10px;}
+#sec002 ul li span img{ width: 45px;}
+}
+
+/*sec003*/
+#sec003{ background: image-url("lp/date/pt002.png") center center fixed; padding: 80px 0;}
+#sec003 ul{ display: table; table-layout: fixed; width: 100%; border-spacing: 40px 0;}
+#sec003 ul li{ display: table-cell; vertical-align: top; padding: 20px; border-radius: 20px; background: #fff; position: relative; z-index: 3; box-shadow:rgba(0, 0, 0, 0.2) 0 0 5px 2px;}
+#sec003 ul li dl{ display: table; table-layout: fixed; width: 100%; border-spacing: 0; margin-bottom: 20px;}
+#sec003 ul li dl dt{ display: table-cell; vertical-align: middle; width: 160px;}
+#sec003 ul li dl dt img{ border-radius: 50%;}
+#sec003 ul li dl dd{ display: table-cell; vertical-align: middle; font-size: 32px; letter-spacing: 0.1em; line-height: 1.2em; text-align: center;}
+@media screen and (max-width:640px){
+#sec003{ padding:40px 0;}
+#sec003 ul{ display: block; border-spacing:0;}
+#sec003 ul li{ display:block; margin-bottom: 20px;}
+#sec003 ul li:last-child{ margin-bottom: 0;}
+#sec003 ul li dl{ margin-bottom:10px;}
+#sec003 ul li dl dt{ display: table-cell; vertical-align: middle; width:210px;}
+#sec003 ul li dl dt img{ border-radius: 50%; width: 100%;}
+#sec003 ul li dl dd{font-size: 32px; line-height: 1.4em;}
+}
+
+/*sec004*/
+#sec004{ background: image-url("lp/date/pt003.png") center center fixed; padding:0 0 80px;}
+#sec004 ul li{ border-bottom: 4px dotted #333; padding: 20px;}
+#sec004 ul li:first-child{ border-top: 4px dotted #333;}
+#sec004 ul li dl dt{ position: relative; color: #c83232; font-size: 28px; font-weight: bold; letter-spacing: 0.1em; line-height: 1.2em; margin-bottom: 5px; padding-left: 1.5em; text-decoration: underline;}
+#sec004 ul li dl dt span{ position: absolute; left: 0; top: 0;}
+#sec004 ul li dl dd{ position: relative; margin-left: 2.5em; padding:0.5em 0 0 2em;}
+#sec004 ul li dl dd span{ position: absolute; left: 0; top: 0; font-size: 28px; color: #326496; font-weight: bold;}
+#sec004 ul li dl dd span.small{ position: static; font-size: 13px; font-weight: normal; color: #666;}
+@media screen and (max-width:640px){
+#sec004{ padding:0 0 40px;}
+#sec004 ul li{ padding: 20px 10px;}
+#sec004 ul li dl dt{ font-size:28px;}
+#sec004 ul li dl dd{ margin-left: 2em;}
+#sec004 ul li dl dd span.small{ font-size: 15px;}
+}
+
+/*sec005*/
+#sec005{ background: image-url("lp/date/pt004.png") center center fixed; padding: 80px 0;}
+#sec005 dl{ display: table; table-layout: fixed; width: 100%;}
+#sec005 dl dt{ display: table-cell; vertical-align: middle; width: 360px;}
+#sec005 dl dt img{ border-radius: 50%;}
+#sec005 dl dt span{ display: block; text-align: center; margin-top: 10px; font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'メイリオ', Meiryo, serif;}
+#sec005 dl dd{ display: table-cell; vertical-align: middle; padding-left: 40px;}
+#sec005 h3{ font-size: 32px; letter-spacing: 0.1em; margin-bottom: 20px; border-bottom: 2px solid #191919; text-align: center;}
+@media screen and (max-width:640px){
+#sec005{ padding:40px 0;}
+#sec005 dl{ display:block;}
+#sec005 dl dt{ display:block; width:100%; text-align: center; margin-bottom: 20px;}
+#sec005 dl dt img{ border-radius: 50%; width: 50%;}
+#sec005 dl dd{ display:block; padding-left:0;}
+#sec005 h3{ font-size: 28px; text-align: left; margin-bottom: 10px;}
+}
+
+/*sec006*/
+#sec006{ background: image-url("lp/date/pt005.png") center center fixed; padding:80px 0;}
+#sec006 .maincontent{ position: relative;}
+#sec006 h2{ margin-bottom: 80px;}
+#sec006 dl{ display: table; table-layout: fixed; width: 100%;}
+#sec006 dl dt{ display: table-cell; vertical-align: middle; width: 310px;}
+#sec006 dl dd{ display: table-cell; vertical-align: middle; padding-left: 20px; font-size: 24px; font-weight: bold; color: #fff;}
+#sec006 span.ico{ position: absolute; right: 20px; bottom: -120px; z-index:3;}
+@media screen and (max-width:640px){
+#sec006{ padding:40px 0;}
+#sec006 h2{ margin-bottom: 40px;}
+#sec006 dl{ display:block;}
+#sec006 dl dt{ display:block; width:100%; text-align:left; margin-bottom: 20px;}
+#sec006 dl dt img{ width: 50%;}
+#sec006 dl dd{ display:block; padding-left:0; font-size: 24px;}
+#sec006 dl dd p{ text-align:left;}
+#sec006 span.ico{ right: 40px; top: -16px; z-index:3;}
+}
+
+
+
+/*フォーム*/
+input[type="submit"],
+input[type="button"],
+button{ border-radius: 0; -webkit-box-sizing: content-box; -webkit-appearance: button; appearance: button; border: none; box-sizing: border-box; cursor: pointer; background: none;}
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration,
+button::-webkit-search-decoration{ display: none;}
+input[type="email"]{ font-family: Lucida Grande,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ","ＭＳ Ｐゴシック",sans-serif; color: #191919; font-size: 32px; font-weight: bold; letter-spacing: 0.1em; text-align: center; padding:10px; border: 2px solid #aaa; width: 800px; border-radius: 8px;}
+@media screen and (max-width:1200px){
+input[type="email"]{ width: 66%;}
+}
+@media screen and (max-width:640px){
+input[type="email"]{ font-size:24px; padding:10px; border: 2px solid #aaa; width:560px;}
+}
+
+section.form{ background: image-url("lp/date/pt001.png") center center fixed; padding: 80px 0; text-align: center; position: relative; z-index: 2}
+section.form .form_in{ position: absolute; margin:auto; left: 0; right: 0; top:54%;}
+section.form .form_btn{ margin-top:3%;}
+@media screen and (max-width:640px){
+section.form{ padding:40px 0;}
+section.form .form_in{ position: static; width: 640px; height: 370px; margin: 0 auto; background: image-url("lp/date/form_smp.png") center center; padding-top:180px;}
+section.form .form_btn{ margin-top: 26px;}
+}
+:placeholder-shown { color:#aaa;}
+.form_btn button{ position: relative; animation:infinite linear 1s fuwafuwa;}
+.form_btn button:hover{ animation-play-state: paused;}
+@keyframes fuwafuwa {
+0% { top:0;}
+25% { top:10px;}
+50% { top:0;}
+75% { top:-10px;}
+100% { top:0;}
+}
+
+
+
+
+@media print, screen and (min-width:641px){
+.smp{ display:none !important;}
+}
+@media screen and (max-width:640px){
+.pc{ display:none !important;}
+}

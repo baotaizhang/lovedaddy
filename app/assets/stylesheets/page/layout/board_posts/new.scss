@@ -1,0 +1,14 @@
+body#board_posts-new,
+body#board_posts-create,
+body#board_posts-edit,
+body#board_posts-update {
+  @import 'page/base_layout/common';
+  @import 'page/base_layout/base_responsive';
+
+  #form-box .form-area:nth-child(2) {
+    margin-bottom: 20px;
+  }
+  #post-msg {
+    height: 235px;
+  }
+}

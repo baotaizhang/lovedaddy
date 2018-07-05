@@ -1,0 +1,27 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/visit_histories/index'
+
+h1 訪問者
+#boards-box
+  .container
+    - if @came_users.present?
+      - @came_users.each do |user|
+        .visit-area
+          .row
+            .col-4.col-sm-4.col-md-3.col-lg-2
+              - if user.display_deleted?(current_user)
+                = image_tag user.no_image_url
+              - else
+                = link_to user do
+                  = image_tag user.display_main_image_url(:thumb)
+            .col-8.col-sm-8.col-md-9.col-lg-10
+              - if user.display_deleted?(current_user)
+                | このユーザーは退会しました
+              - else
+                p.visit-name #{user.nickname}
+                p.visit-status
+                  = user.decorate.last_login_status
+                p.visit-remove
+                  | #{link_to '訪問履歴の削除', visit_history_path(from_user_id: user.id), method: :delete}
+    - else
+      | まだ訪問者はいません

@@ -1,0 +1,9 @@
+users:
+  - { name: deploy,  password: "$1$XbgGInyo$XYdy.dEgK.J9Y5OHfOluq/", groups: "wheel" }
+  - { name: n_inoue, password: "$1$40y3AMdF$J5sOdjkEd6QJXi1mFiNfg0", groups: "wheel" }
+  - { name: inodev,  password: "$1$XbgGInyo$XYdy.dEgK.J9Y5OHfOluq/", groups: "wheel" }
+
+off_services:
+  - atd
+  - mdmonitor
+  - rngd

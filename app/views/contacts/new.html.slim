@@ -1,0 +1,41 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/homes/contacts'
+
+#contact-box
+  #main-title
+    .container
+      .row
+        .col-12
+          h1
+            | お問合わせ
+            span contact
+  #table-layout
+    .container
+      = form_for @contact do |f|
+        == render 'shared/valid_msg', object: @contact
+        table.table-base
+          tbody
+            tr
+              th
+                label for="name" 
+                  | タイトル
+                  span 必須
+              td
+                = f.text_field :title, id: 'name', class: 'placeholder-color', placeholder: '会員登録後、メールが届かない。'
+            tr
+              th
+                label for="mail" 
+                  | メールアドレス
+                  span 必須
+              td
+                = f.email_field :email, id: 'mail', class: 'placeholder-color', placeholder: 'info@horizon-c.co.jp'
+            tr
+              th
+                label for="msg" 
+                  | お問い合わせ内容
+                  span 必須
+              td
+                = f.text_area :content, id: 'msg', class: 'placeholder-color', size: '30x10', placeholder: 'メールアドレスを入力して、会員登録をしたが、会員登録完了のメールが届きません。'
+        #submit-area
+          input#submit name="submit" type="submit" value="送信"
+

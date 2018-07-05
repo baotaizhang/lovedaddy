@@ -1,0 +1,17 @@
+= form_tag user_sessions_path, :method => :post do
+  .form-area
+    = label_tag :email, 'メールアドレス'
+    = email_field_tag :email, params[:email], id: 'email', placeholder: 'example@love-daddy.jp', type: 'email', requred: true
+  .form-area
+    = label_tag :password, 'パスワード'
+    = password_field_tag :password, nil, id: 'password', placeholder: '※6文字以上', type: 'password', requred: true
+  = check_box_tag :remember, params[:remember], true
+  = label_tag :remember, 'ログイン状態を保持', class: 'check-box'
+  .align-center
+    button.form-btn type='submit'
+      | ログイン
+  ul.registered-area
+    li
+      = link_to '新規登録の方はこちら', new_user_path
+    li
+      = link_to 'パスワードを忘れた方はこちら', forget_path

@@ -1,0 +1,135 @@
+#options-box .form-area .check-box {
+  font-size: 16px;
+}
+#options-box .form-area .check-box + p {
+  font-size: 13px;
+}
+.form-area.separate-b {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #e0e0e0;
+}
+h2 {
+  margin: 20px 0 30px;
+  font-size: 24px;
+  text-align: center;
+}
+/*--tab-----------*/
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.tab-menu {
+  margin: 0;
+  padding: 0;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.tab-menu li {
+  display: inline;
+  width: 100%;
+}
+.tab-menu li a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background: #9a9a9a;
+  color: #fff;
+  border-radius: 3px 3px 0 0;
+  text-align: center;
+}
+.tab-menu li a:hover, .tab-menu li a.active {
+  background: #c8141e;
+  color: #fff;
+  position: relative;
+}
+.tab-menu li a.active:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 9px;
+  background: image-url('common/ico-tab-arrow.svg') 0 0 no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  margin-left: -8px;
+}
+.tab-menu li {
+  margin-right: 5px;
+}
+.tab-menu li:last-child {
+  margin-right: 0;
+}
+.tab-content #tab02 ul li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.form-area.separate-b:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.tab-content #tab02 ul {
+  text-align: center;
+}
+#tab03, #tab04 {
+  text-align: center;
+}
+#form-box .form-btn {
+  width: inherit;
+  margin: 10px 0;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #fff;
+}
+/*--block-----------*/
+
+.usr-area {
+  border-bottom: solid 1px #e0e0e0;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+p {
+  margin-bottom: 0;
+}
+.usr-posted {
+  /* padding-top: 1px; */
+  /* font-size: 12px; */
+}
+.usr-name {
+  margin-right: 15px;
+  float: left;
+}
+.usr-age {
+  font-size: 14px;
+  padding-top: 1px;
+}
+.usr-status {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #a9a9a9;
+}
+.usr-area p, #tab04 .usr-area p {
+  text-align: left;
+}
+.usr-area:last-child {
+  border-bottom: none;
+}
+.release-btn a{
+  display: inline-block;
+  margin-top: 17px;
+  padding: 5px 9px;
+  font-size: 11px;
+  border: solid 1px #c8141e;
+  color: #c8141e;
+}
+.unsubscribe-link{
+  text-align: right;
+  font-size: 14px;
+}
+
+@import 'page/component/option_tabs_responsive';

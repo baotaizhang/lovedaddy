@@ -1,0 +1,8 @@
+---
+- name: nodejs install
+  yum: name=nodejs state=installed
+  register: nodejs_installed
+
+- name: yarn install
+  command: "npm install -g yarn"
+  when: nodejs_installed | changed

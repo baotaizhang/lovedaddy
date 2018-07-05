@@ -1,0 +1,17 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/income_credentials/thanks'
+
+.container
+  .row.justify-content-center.align-items-center
+    #main-area.col-md-12.col-lg-9
+      h1 所得証明のご案内
+      .row.justify-content-center.align-items-center
+        .col-md-9.col-lg-9
+          p
+            | 所得証明のアップロードが完了しました。
+            br/
+            | 承認までいましばらくお待ち下さい。
+            br/
+            | 1時間~24時間程度かかることがありますのでご了承ください。
+          .link-btn-solid
+            = link_to 'ホームへ戻る', root_path

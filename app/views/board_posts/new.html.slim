@@ -1,0 +1,11 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/board_posts/new'
+
+#form-box
+  .container
+    .row.justify-content-center.align-items-center
+      .col-md-8.col-lg-6
+        h1 掲示板への投稿
+        == render 'form'
+        br
+        = link_to '<< 掲示版投稿の一覧へ戻る', board_posts_path

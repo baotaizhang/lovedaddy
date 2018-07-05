@@ -1,0 +1,24 @@
+#loading-modal {
+  display: none;
+  background-color: rgba(255,255,255,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  height: 100%;
+  width: 100%;
+
+  .loading-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    .loading-text {
+      color: #333333;
+      font-size: 1.5em;
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+= form_for @birthday_credential do |f|
+  == render 'shared/valid_msg', object: @birthday_credential
+  .form-group
+    = f.label :photo_1
+    = f.file_field :photo_1, accept: 'image/*', capture: 'camera', required: true
+  .form-group
+    = f.label :photo_2
+    = f.file_field :photo_2, accept: 'image/*', capture: 'camera'
+  .form-group
+    = f.label :photo_3
+    = f.file_field :photo_3, accept: 'image/*', capture: 'camera'
+  .text-center
+    button.btn.btn-info.btn-lg.btn-block type='submit'
+      | アップロードする

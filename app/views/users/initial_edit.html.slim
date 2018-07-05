@@ -1,0 +1,135 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/users/initial_edit'
+- content_for :page_javascript do
+  = javascript_include_tag 'page/users-initial_edit'
+
+#form-box
+  .container
+    .row.justify-content-center.align-items-center
+      .col-md-8.col-lg-6
+        h1 プロフィール入力
+        p.main-caption 入力情報は初回のみ変更可能な情報になります。
+        = form_for @user, url: initial_update_users_path, method: :put, html: {class: 'basic-form'} do |f|
+          == render 'shared/valid_msg', object: @user
+          .form-area
+            = f.label :nickname
+            = f.text_field :nickname, class: 'form-control',  required: true
+          .form-area
+            = f.label :password
+            = f.password_field :password, class: 'form-control',  required: true
+          .form-area.separate-b
+            = f.label :sex
+            .radio-btn
+              - User.sex.options.reverse.each do |name, value|
+                = f.radio_button :sex, value.to_sym, class: 'radio-btn-input', id: "sex-#{value}"
+                = f.label :sex, name, for: "sex-#{value}"
+          .form-area.separate-b
+            label name="user[birthday(1i)]"  生年月日
+            .form-inline
+              == sprintf(f.date_select(:birthday, {use_month_numbers: true, start_year: 100.years.ago.year, end_year: 17.years.ago.year, default: Date.new(1980, 1, 1), date_separator: '%s'}),'<span>年</span>', '<span>月</span>') + '<span>日'
+          .form-area.separate-b
+            label for="residence"
+              | 居住地
+              span 必須
+            = f.collection_select :residence_id, Prefecture.restricted_area, :id, :name, {include_blank: true}, {class: 'form-control'}
+          .form-area.separate-b.sex-input.sex-input-male
+            label for="income" 
+              | 年収
+              span 必須
+            .form-inline
+              = f.select :income, User.select_range_list(:income), {include_blank: true}, {class: 'form-control'}
+          .form-area.separate-b.sex-input.sex-input-male
+            label for="property" 
+              | 資産
+              span 必須
+            .form-inline
+              = f.select :property, User.select_range_list(:property), {include_blank: true}, {class: 'form-control'}
+          .form-area.separate-b.sex-input.sex-input-common
+            label for="height"
+              | 身長
+              span 必須
+            .form-inline
+              = f.select :height, User.select_range_list(:height), {include_blank: true}
+          .form-area.separate-b.sex-input.sex-input-common
+            label for="body-weight"
+              | 体型
+              span 必須
+            .form-inline
+              = f.select :body_shape, User.body_shape.options, {include_blank: true}
+          .form-area.separate-b.sex-input.sex-input-common
+            label for="profession"
+              | 職業
+              span 必須
+            .form-inline
+              = f.select :occupation, User.occupation.options, {include_blank: true}
+          .form-area.separate-b.sex-input.sex-input-common
+            label for="food-drink"
+              | 飲酒
+              span 必須
+            .radio-btn
+              - User.drinking.options.each do |name, value|
+                = f.radio_button :drinking, value.to_sym, class: 'radio-btn-input', id: "drinking-#{value}"
+                = f.label :drinking, name, for: "drinking-#{value}"
+          .form-area.separate-b.sex-input.sex-input-common
+            label for="profession"
+              | 喫煙
+              span 必須
+            .radio-btn
+              - User.smoking.options.each do |name, value|
+                = f.radio_button :smoking, value.to_sym, class: 'radio-btn-input', id: "smoking-#{value}"
+                = f.label :smoking, name, for: "smoking-#{value}"
+          .form-area.separate-b.sex-input.sex-input-common
+            label for="profession"
+              | 婚姻状況
+              span 必須
+            .radio-btn
+              - User.marital_relationship.options.each do |name, value|
+                = f.radio_button :marital_relationship, value.to_sym, class: 'radio-btn-input', id: "marital-relationship-#{value}"
+                = f.label :marital_relationship, name, for: "marital-relationship-#{value}"
+          .form-area.separate-b.associate.sex-input.sex-input-female
+            label for="type" 
+              | 交際タイプ
+              span 必須
+            .radio-btn
+              / TODO: 説明なども含めてループさせられるようリファクタリング
+              /-#= f.select :motivation, User.motivation.options, {include_blank: true}, {class: 'form-control'}
+              input#associate01.radio-btn-input name="user[motivation]" type="radio" value="lunch"
+              label for="associate01"
+                | お食事のみデート
+                br
+                span.associate-caption
+                  | (お食事やカフェのみのデートでお願いします。)
+              input#associate02.radio-btn-input name="user[motivation]" type="radio" value="start_with_meeting"
+              label for="associate02"
+                | 一度お会いしてから
+                br
+                span.associate-caption
+                  | (初めは不安ですので、一度お会いさせて下さい。2回目以降目的ニーズがマッチングすれば交際に進展する可能性があります。)
+              input#associate03.radio-btn-input name="user[motivation]" type="radio" value="needs_matching"
+              label for="associate03"
+                | 目的ニーズで進展
+                br
+                span.associate-caption
+                  | (初回からお互いの目的ニーズがマッチングすれば交際に進展する可能性があります。)
+              input#associate04.radio-btn-input name="user[motivation]" type="radio" value="glad_having_invitation"
+              label for="associate04"
+                | お誘い頂ければ嬉しいです
+                br
+                span.associate-caption
+                  | (初回からでも優しくお誘い頂ければ交際に進展する可能性があります。)
+              input#associate05.radio-btn-input name="user[motivation]" type="radio" value="having_invitation"
+              label for="associate05"
+                | お誘いください
+                br
+                span.associate-caption
+                  | (お誘い頂ければ交際に進展する可能性があります。)
+          .form-area.separate-b.sex-input.sex-input-common
+            label for="birthplace"
+              | 出身地
+              span 必須
+            = f.collection_select :birthplace_id, Prefecture.all, :id, :name, {include_blank: true}, {class: 'form-control'}
+          .sex-input.sex-input.sex-input-common
+            label for="introduction"  自己紹介
+            = f.text_area :introduction, class: 'form-control', placeholder: 'はじめまして ...'
+          button.form-btn type="submit"  プロフィールを登録する
+

@@ -1,0 +1,29 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch('MYSQL_USER', 'root') %>
+  password: <%= ENV.fetch('MYSQL_ROOT_PASSWORD', 'password') %>
+  host: <%= ENV.fetch('MYSQL_HOST', 'localhost') %>
+  variables:
+    sql_mode: TRADITIONAL
+
+development:
+  <<: *default
+  database: <%= ENV.fetch('DEV_DB', 'lovedaddy_dev') %>
+
+test:
+  <<: *default
+  database: <%= ENV.fetch('TEST_DB', 'lovedaddy_test') %>
+
+staging:
+  <<: *default
+  database: <%= ENV.fetch('STG_DB', 'lovedaddy_stg') %>
+  username: <%= ENV.fetch('STG_DB_USER', 'root') %>
+  password: <%= ENV.fetch('STG_DB_PASSWORD', 'password') %>
+
+production:
+  <<: *default
+  database: <%= ENV.fetch('PROD_DB', 'lovedaddy_prod') %>
+  username: <%= ENV.fetch('PROD_DB_USER', 'root') %>
+  password: <%= ENV.fetch('PROD_DB_PASSWORD', 'password') %>

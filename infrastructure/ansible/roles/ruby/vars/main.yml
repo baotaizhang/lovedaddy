@@ -1,0 +1,3 @@
+# file: roles/ruby/vars/main.yml
+ruby:
+  version: "{{ ruby_version }}"

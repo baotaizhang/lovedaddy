@@ -1,0 +1,9 @@
+<%= @message.to_user.nickname %> 様
+
+LoveDaddy運営事務局です。
+
+<%= @message.from_user.nickname %>様からメッセージが届きましたのでお知らせします。
+
+↓メッセージの詳細はこちら↓
+<%= message_url(@message.from_user) %>
+

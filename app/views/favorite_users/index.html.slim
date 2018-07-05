@@ -1,0 +1,37 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/favorite_users/index'
+
+h1 お気に入り
+.container
+  .row
+    .col-12
+      .container
+        .usr-btn-area
+          ul
+            li
+              = link_to "お気に入りしている（#{@favorite_users_count}）", favorite_users_path, class: 'usr-btn'
+            li
+              = link_to "お気に入りされている（#{@reverse_favorite_users_count}）", favorite_users_path(others: true), class: 'usr-history-btn'
+      .container
+        .boards-area
+          - if @users.present?
+            - @users.each do |user|
+              -# TODO: 掲示板等での表示パーシャル化
+              .row
+                .col-4.col-sm-4.col-md-3.col-lg-2
+                  - if user.display_deleted?(current_user)
+                    = image_tag user.no_image_url, class: 'img-fluid'
+                  - else
+                    = link_to user do
+                      = image_tag user.display_main_image_url(:thumb), class: 'img-fluid'
+                .col-8.col-sm-8.col-md-9.col-lg-10
+                  - if user.display_deleted?(current_user)
+                    p.favorite-name このユーザーは退会しました
+                  - else
+                    p.favorite-name #{user.nickname}
+                    p.favorite-age #{user.age}歳 / #{user.residence.name}
+                    p.favorite-status #{user.last_login_status}
+                  = render 'favorite_button', user: user
+          - else
+            p
+              | まだお気に入りはありません

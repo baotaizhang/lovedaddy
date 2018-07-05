@@ -1,0 +1,10 @@
+---
+# nginx
+worker_processes: "auto"
+worker_connections: "1024"
+server_name: "staging.love-daddy.jp"
+app_name: "lovedaddy"
+real_ip_from_with_cider_format: "192.168.0.0/16"
+
+# ruby
+ruby_version: "2.5.1"

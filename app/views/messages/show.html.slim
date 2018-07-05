@@ -1,0 +1,38 @@
+= hidden_field_tag :last_message_id, (@messages.present? ? @messages.last.id : 0), id: 'last-message-id'
+= hidden_field_tag :last_read_id, @last_read_id || 0, id: 'last-read-id'
+
+header
+  = link_to @to_user
+    #mem_photo
+      = image_tag @to_user.display_main_image_url(:thumb)
+    dl
+      dt= @to_user.nickname 
+      dd= @to_user.last_login_status
+  = link_to @to_user, id: 'pageBack'
+    = image_tag 'common/back.svg'
+
+section#message.CC
+  - if @messages.present?
+    = @messages.first.post_date_tag
+    = render 'message_row', messages: @messages, last_read_id: @last_read_id
+  - else
+    | まだメッセージはありません
+
+footer
+  = form_for :message, url: api_messages_path, method: :post, html: {id: 'message-form'}, onclick: "b(){};return false;" do |f|
+    #footer_container.CC
+      = f.hidden_field :to_user_id, value: @to_user.id, id: 'to_user_id'
+      label.camera-label
+        = f.file_field :image_camera, id: 'camera', accept: 'image/*', capture: 'camera'
+        = image_tag 'messages_show/msg_camera.svg'
+      label.attachment-label
+        = f.file_field :image_attachment, id: 'attachment', accept: 'image/*'
+        = image_tag 'messages_show/pic.svg'
+      #comment_container
+        = f.text_area :content, id: 'comment', class: 'refresh-input', placeholder: 'メッセージを入力して下さい', autofocus: true, required: true
+        -#input alt="絵文字" src="./img/smile.svg" type="image"
+      #submitBtn
+        input type="submit" value="送信"
+
+== render 'shared/loading_modal'
+

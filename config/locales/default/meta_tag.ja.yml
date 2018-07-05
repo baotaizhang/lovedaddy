@@ -1,0 +1,7 @@
+ja:
+  meta_tags:
+    defaults: # TODO: デフォルトのサイト情報の追加
+      site: 'LoveDaddy'
+      description: ''
+      keywords: 'パパ活'
+      title: ''

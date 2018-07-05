@@ -1,0 +1,124 @@
+- content_for :page_stylesheet do
+  = stylesheet_link_tag 'page/layout/users/show'
+- content_for :page_javascript do
+  = javascript_include_tag 'page/users-show'
+
+section#profile.CC
+  #wrap
+    #left_contents
+      h1 class=("female" if @user.sex.female?)
+        | プロフィール
+      #photo_container
+        ul#pro_photo
+          li
+            = link_to @user.display_main_image_url, data: {lightbox: 'profile-image'}
+              = image_tag @user.display_main_image_url(:thumb)
+          - @user.profile_images_for(current_user).each do |profile_image|
+            = link_to profile_image.photo.url, data: {lightbox: 'profile-image'}
+              = image_tag profile_image.photo.thumb.url
+        ul#pro_thumb
+          li
+            = image_tag @user.display_main_image_url(:thumb)
+          - @user.profile_images_for(current_user).each do |profile_image|
+            = image_tag profile_image.photo.thumb.url
+      .data_container.Flex
+        ul#pro_data
+          - if current_user?(@user)
+            li= link_to '編集する', edit_user_path(@user), class: 'profile-edit-link'
+          li.name class=("female" if @user.sex.female?)
+            = @user.nickname
+          li
+            | #{@user.age}歳
+            - if @user.residence.present?
+              |／#{@user.residence.name}
+          - if @user.sex.male?
+            li 年収: #{@user.range_text(:income)}
+            li 資産: #{@user.range_text(:property)}
+          - elsif @user.sex.female?
+            li 登録日:#{@user.created_at.strftime('%Y年%m月%d日')}
+          - status_text = @user.last_login_status
+          li.status class=(@user.sex if status_text == 'オンライン')
+            = status_text
+        ul#prove.Flex class=("female" if @user.sex.female?)
+          - if @user.sex.male?
+            - if @user.birthday_credentials.with_status(:approved).present?
+              li
+                = image_tag('profile/prove01.png', alt: '年齢証明')
+            - else
+              li
+                = link_to_if current_user?(@user), image_tag('profile/unprove01.png', alt: '年齢証明'), new_birthday_credential_path
+            - if @user.income_credential_approved?
+              li
+                = image_tag('profile/prove02.png', alt: '所得証明')
+            - else
+              li
+                = link_to_if current_user?(@user), image_tag('profile/unprove02.png', alt: '所得証明'), new_income_credential_path
+          - elsif @user.sex.female?
+            - if @user.birthday_credentials.with_status(:approved).present?
+              li
+                = image_tag('profile/l_prove01.png', alt: '年齢証明')
+            - else
+              li
+                = link_to_if current_user?(@user), image_tag('profile/l_unprove01.png', alt: '年齢証明'), new_birthday_credential_path
+      - unless current_user?(@user)
+        ul#msg_add.Flex
+          li
+            == render 'birthday_credentials/credential_guide_link', permit: can?(:create, Message), url: message_path(@user), link_class: 'send_msg' do
+              span メッセージを送る
+          li
+            == render 'favorite_users/favorite_button', user: @user
+          li
+            == render 'image_viewable_users/image_viewable_button', user: @user
+    #right_contents class=("female" if @user.sex.female?)
+      dl
+        dt メッセージ
+        dd
+          p
+            = simple_format @user.introduction || '未設定'
+      dl
+        dt 基本情報
+        dd
+          table
+            tr
+              th 身長
+              td= @user.range_text(:height)
+            tr
+              th 体型
+              td= @user.body_shape_text || '未設定'
+            tr
+              th 職業
+              td= @user.occupation_text || '未設定'
+            tr
+              th 飲酒
+              td= @user.drinking_text || '未設定'
+            tr
+              th 喫煙
+              td= @user.smoking_text || '未設定'
+            tr
+              th 婚姻状況
+              td= @user.marital_relationship_text || '未設定'
+            - if @user.sex.female?
+              tr
+                th 交際タイプ
+                td= @user.motivation_text || '未設定'
+            tr
+              th 居住地
+              td= @user.residence&.name || '未設定'
+            tr
+              th 出身地
+              td= @user.birthplace&.name || '未設定'
+            - @user.sex.male?
+              tr
+                th 資産
+                td= @user.range_text(:property)
+              tr
+                th 収入
+                td= @user.range_text(:income)
+      - unless current_user?(@user)
+        ul#blackBtn.Flex
+          li
+            == render 'block_users/block_button', user: @user
+          li
+            == render 'birthday_credentials/credential_guide_link', permit: can?(:create, Message), url: new_user_report_path(t: @user.url_token) do
+              span 通報する
+

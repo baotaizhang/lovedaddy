@@ -1,0 +1,20 @@
+.container
+  .row
+    .col-12.offset-sm-1.col-sm-10.offset-lg-3.col-lg-6
+      h1 新しいパスワードを登録する
+      = form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f|
+        - if @user.errors.any?
+          #error_explanation
+            ul
+              - @user.errors.full_messages.each do |msg|
+                li= msg
+        .form-group
+          = f.label :email
+          br/
+          = @user.email
+        .form-group
+          = f.label :password
+          br/
+          = f.password_field :password, required: true
+        button.btn.btn-dark type='submit'
+          | 更新する
